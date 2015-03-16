@@ -1,53 +1,45 @@
-# Kowa
+kowa client
+===========
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Static website manager.
 
-## Prerequisites
+**WARNING: This is a work in progress, tests are missing, documentation is missing... a lot of stuff is missing, and it has NOT been deployed in production yet.**
 
-You will need the following things properly installed on your computer.
+See <https://github.com/aymerick/kowa> for more informations.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 
-## Installation
+## Development setup
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+### Server
 
-## Running / Development
+Follow instructions at: <https://github.com/aymerick/kowa>
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+### Client
 
-Make use of the many generators for code, try `ember help generate` for more details
+Start client:
 
-### Running Tests
+    $ ember server --proxy http://127.0.0.1:35830
 
-* `ember test`
-* `ember test --server`
+The admin app is now running at <http://127.0.0.1:4200> and you can login with credentials: `mike` / `pizzaword`.
 
-### Building
+If you want to disable live reload (when testing image upload for example), set the `--live-reload`:
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+    $ ember server --proxy http://127.0.0.1:35830 --live-reload=false
 
-### Deploying
 
-Specify what it takes to deploy your app.
+## Development workflow
 
-## Further Reading / Useful Links
+When you change client code, the app is rebuilt automatically, and the browser reloads it (unless `--live-reload=false` flag is set).
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+## Test
+
+To launch tests:
+
+    $ ember test
+
+
+## Sublime Text
+
+Search Where: -*/bower_components/*,-*/node_modules/*,-*/dist/*,-*/tmp/*,-*.min.js,-*.min.css,-*.css.map,-*.min.map,-*.svg
