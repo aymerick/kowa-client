@@ -1,5 +1,4 @@
-kowa client
-===========
+# kowa client [![Build Status](https://secure.travis-ci.org/aymerick/kowa-client.svg?branch=master)](http://travis-ci.org/aymerick/kowa-client) [![Code Climate](https://codeclimate.com/github/aymerick/kowa-client.svg)](https://codeclimate.com/github/aymerick/kowa-client)
 
 Admin app for kowa, the static website manager.
 
