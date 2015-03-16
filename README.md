@@ -1,6 +1,6 @@
 # kowa client [![Build Status](https://secure.travis-ci.org/aymerick/kowa-client.svg?branch=master)](http://travis-ci.org/aymerick/kowa-client) [![Code Climate](https://codeclimate.com/github/aymerick/kowa-client.svg)](https://codeclimate.com/github/aymerick/kowa-client)
 
-Admin app for kowa, the static website manager.
+Admin web app for kowa, the static website manager.
 
 **WARNING: This is a work in progress, tests are missing, documentation is missing... a lot of stuff is missing, and it has NOT been deployed in production yet.**
 
