@@ -5,6 +5,8 @@ Admin app for kowa, the static website manager.
 
 **WARNING: This is a work in progress, tests are missing, documentation is missing... a lot of stuff is missing, and it has NOT been deployed in production yet.**
 
+This is an Ember.js application that communicates with a server written in Go that you can find at <https://github.com/aymerick/kowa>.
+
 See <https://github.com/aymerick/kowa> for more informations.
 
 
