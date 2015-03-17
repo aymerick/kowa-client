@@ -4,7 +4,7 @@ var SITE_SERIALIZER_FIELDS = [
   'name', 'tagline', 'description',
   'moreDesc', 'joinText', 'email', 'address',
   'facebook', 'twitter', 'googlePlus', 'googleAnalytics',
-  'logo', 'cover', 'theme', 'uglyUrl',
+  'logo', 'cover', 'theme', 'baseUrl', 'uglyUrl',
   'nameInNavBar', 'lang'
 ];
 

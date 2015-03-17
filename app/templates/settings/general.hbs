@@ -49,6 +49,14 @@
     </div>
 
     <div class="form-group">
+        <label for="site-base-url">{{t 'site.baseUrl'}}</label>
+        {{input id="site-base-url" name="general[baseUrl]" type="text" class="form-control" value=baseUrl}}
+        <p class="info">
+            {{t 'site.baseUrlInfos'}}
+        </p>
+    </div>
+
+    <div class="form-group">
         <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
         {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=googleAnalytics}}
         <p class="info">

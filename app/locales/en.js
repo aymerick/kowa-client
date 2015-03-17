@@ -179,6 +179,8 @@ export default {
   // general settings
   General: 'General',
   site: {
+    baseUrl: 'Base URL',
+    baseUrlInfos: 'Where your website is located',
     displayNameInNavBar: 'Display name in navigation bar',
     googleAnalytics: 'Google Analytics ID',
     googleAnalyticsInfos: 'Enter your Google Analytics ID to gather statistics about your website traffic',

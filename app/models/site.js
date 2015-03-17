@@ -37,6 +37,7 @@ var Site = DS.Model.extend({
 
   // settings
   theme: DS.attr(),
+  baseUrl: DS.attr(),
   uglyUrl: DS.attr('boolean'),
 
   // theme settings

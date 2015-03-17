@@ -192,6 +192,8 @@ export default {
   // general settings
   General: 'Général',
   site: {
+    baseUrl: 'URL',
+    baseUrlInfos: "Indiquez l'adresse de votre site web",
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
     googleAnalytics: 'ID Google Analytics',
     googleAnalyticsInfos: 'Entrez votre identifiant Google Analytics pour activer les statistiques de votre site web',
