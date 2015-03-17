@@ -18,15 +18,19 @@
 
             <form class="form-horizontal content-dates">
               <div class="form-group">
-                <label for="event-startDate" class="col-sm-1 control-label">{{t 'event.start'}}</label>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
+                    <label for="event-startDate" class="col-sm-1 control-label">{{t 'event.start'}}</label>
+                </div>
+                <div class="col-sm-6">
                     <!-- @todo Fix locale -->
                     {{bs-datetimepicker id="event-startDate" date=model.startDate format='DD-MM-YYYY HH:mm' forceDateOutput=true locale='fr'}}
                 </div>
               </div>
               <div class="form-group">
-                <label for="event-endDate" class="col-sm-1 control-label">{{t 'event.end'}}</label>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
+                   <label for="event-endDate" class="col-sm-1 control-label">{{t 'event.end'}}</label>
+                </div>
+                <div class="col-sm-6">
                     <!-- @todo Fix locale -->
                     {{bs-datetimepicker id="event-endDate" date=model.endDate format='DD-MM-YYYY HH:mm' forceDateOutput=true locale='fr'}}
                 </div>
