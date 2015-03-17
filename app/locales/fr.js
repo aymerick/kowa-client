@@ -193,6 +193,8 @@ export default {
   General: 'Général',
   site: {
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
+    googleAnalytics: 'ID Google Analytics',
+    googleAnalyticsInfos: 'Entrez votre identifiant Google Analytics pour activer les statistiques de votre site web',
     lang: 'Langue du site',
     langInfos: "Votre site s'affichera dans cette langue",
     logo: 'Logo du site',

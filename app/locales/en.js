@@ -180,6 +180,8 @@ export default {
   General: 'General',
   site: {
     displayNameInNavBar: 'Display name in navigation bar',
+    googleAnalytics: 'Google Analytics ID',
+    googleAnalyticsInfos: 'Enter your Google Analytics ID to gather statistics about your website traffic',
     lang: 'Site Language',
     langInfos: 'Your site will be displayed with this language',
     logo: 'Site Logo',

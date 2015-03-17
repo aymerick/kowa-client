@@ -3,7 +3,7 @@ import DS from 'ember-data';
 var SITE_SERIALIZER_FIELDS = [
   'name', 'tagline', 'description',
   'moreDesc', 'joinText', 'email', 'address',
-  'facebook', 'twitter', 'googlePlus',
+  'facebook', 'twitter', 'googlePlus', 'googleAnalytics',
   'logo', 'cover', 'theme', 'uglyUrl',
   'nameInNavBar', 'lang'
 ];

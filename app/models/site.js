@@ -20,6 +20,8 @@ var Site = DS.Model.extend({
   twitter: DS.attr(),
   googlePlus: DS.attr(),
 
+  googleAnalytics: DS.attr(),
+
   logo: DS.belongsTo('image', { inverse: 'logoSites', async: true }),
   cover: DS.belongsTo('image', { inverse: 'coverSites', async: true }),
 
