@@ -49,18 +49,18 @@
     </div>
 
     <div class="form-group">
-        <label for="site-lang">{{t 'site.lang'}}</label>
-        {{view "select" id="site-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=lang class="form-control"}}
-        <p class="info">
-            {{t 'site.langInfos'}}
-        </p>
-    </div>
-
-    <div class="form-group">
         <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
         {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=googleAnalytics}}
         <p class="info">
             {{t 'site.googleAnalyticsInfos'}}
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label for="site-lang">{{t 'site.lang'}}</label>
+        {{view "select" id="site-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=lang class="form-control"}}
+        <p class="info">
+            {{t 'site.langInfos'}}
         </p>
     </div>
 </form>
