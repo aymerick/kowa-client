@@ -52,7 +52,7 @@ To launch tests:
 
     $ ember test
 
-Continous testing with [testem]<https://github.com/airportyh/testem>:
+Continous testing with [testem](https://github.com/airportyh/testem):
 
     $ ember test -s
 
