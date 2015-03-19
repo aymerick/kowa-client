@@ -41,6 +41,21 @@
     </div>
 
     <div class="form-group">
+        <label for="site-favicon">{{t 'site.favicon'}}</label>
+        {{#if favicon}}
+            <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "favicon"}}>
+                <img id="site-favicon" {{bind-attr src=favicon.smallUrl}} alt="favicon">
+                <span class="remove-image" {{action 'removeFavicon'}}>&#10006;</span>
+            </button>
+        {{else}}
+            <button type="button" class="btn btn-success" {{action "openModal" "select-image" controller "favicon"}}>{{t 'chooseImage'}}</button>
+        {{/if}}
+        <p class="info">
+            {{t 'site.faviconInfos'}}
+        </p>
+    </div>
+
+    <div class="form-group">
         <label for="site-theme">{{t 'site.theme'}}</label>
         {{view "select" id="site-theme" content=allThemes selection=theme class="form-control"}}
         <p class="info">

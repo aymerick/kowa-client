@@ -14,6 +14,10 @@ var SettingsGeneralController = Ember.ObjectController.extend({
       this.get('model').set('logo', null);
     },
 
+    removeFavicon: function() {
+      this.get('model').set('favicon', null);
+    },
+
     // called by 'select-image' modal controller
     imageSelected: function(field, image) {
       var model = this.get('model');

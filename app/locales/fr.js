@@ -195,6 +195,8 @@ export default {
     baseUrl: 'URL',
     baseUrlInfos: "Indiquez l'adresse de votre site web",
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
+    favicon: 'Favicon',
+    faviconInfos: "Une icone de 16x16 pixels qui s'affichera dans le navigateur des visiteurs de votre site web",
     googleAnalytics: 'ID Google Analytics',
     googleAnalyticsInfos: 'Entrez votre identifiant Google Analytics pour activer les statistiques de votre site web',
     lang: 'Langue du site',

@@ -182,6 +182,8 @@ export default {
     baseUrl: 'Base URL',
     baseUrlInfos: 'Where your website is located',
     displayNameInNavBar: 'Display name in navigation bar',
+    favicon: 'Site Favicon',
+    faviconInfos: 'A 16x16 pixels icon that will be displayed in your website visitors browser',
     googleAnalytics: 'Google Analytics ID',
     googleAnalyticsInfos: 'Enter your Google Analytics ID to gather statistics about your website traffic',
     lang: 'Site Language',

@@ -24,6 +24,7 @@ var Site = DS.Model.extend({
 
   logo: DS.belongsTo('image', { inverse: 'logoSites', async: true }),
   cover: DS.belongsTo('image', { inverse: 'coverSites', async: true }),
+  favicon: DS.belongsTo('image', { inverse: 'faviconSites', async: true }),
 
   user: DS.belongsTo('user', { async: true }),
 

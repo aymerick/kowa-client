@@ -19,6 +19,8 @@ var ImageModel = DS.Model.extend({
 
   logoSites: DS.hasMany('site', { inverse: 'logo', async: true }),
   coverSites: DS.hasMany('site', { inverse: 'cover', async: true }),
+  faviconSites: DS.hasMany('site', { inverse: 'favicon', async: true }),
+
   coverPosts: DS.hasMany('post', { inverse: 'cover', async: true }),
   coverEvents: DS.hasMany('event', { inverse: 'cover', async: true }),
   coverPages: DS.hasMany('page', { inverse: 'cover', async: true }),

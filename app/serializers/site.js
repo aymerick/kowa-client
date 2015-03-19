@@ -4,7 +4,7 @@ var SITE_SERIALIZER_FIELDS = [
   'name', 'tagline', 'description',
   'moreDesc', 'joinText', 'email', 'address',
   'facebook', 'twitter', 'googlePlus', 'googleAnalytics',
-  'logo', 'cover', 'theme', 'baseUrl', 'uglyUrl',
+  'logo', 'cover', 'favicon', 'theme', 'baseUrl', 'uglyUrl',
   'nameInNavBar', 'lang'
 ];
 
@@ -32,6 +32,15 @@ var SiteSerializer = DS.RESTSerializer.extend({
 
     if (result['cover'] == null) {
       delete(result['cover']);
+    }
+
+    // favicon
+    if (result['favicon']) {
+      result['favicon'] = result['favicon'].get('id');
+    }
+
+    if (result['favicon'] == null) {
+      delete(result['favicon']);
     }
 
     return result;
