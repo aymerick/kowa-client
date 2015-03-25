@@ -57,6 +57,13 @@ Continous testing with [testem](https://github.com/airportyh/testem):
     $ ember test -s
 
 
+## Production
+
+Generate production distribution with:
+
+    $ ember build --environment=production
+
+
 ## Sublime Text
 
 Search Where: -*/bower_components/*,-*/node_modules/*,-*/dist/*,-*/tmp/*,-*.min.js,-*.min.css,-*.css.map,-*.min.map,-*.svg
