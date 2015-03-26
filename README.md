@@ -36,10 +36,6 @@ Start client:
 
 The admin app is now running at <http://127.0.0.1:4200> and you can login with credentials: `mike` / `pizzaword`.
 
-If you want to disable live reload (when testing image upload for example), use `--live-reload`:
-
-    $ ember server --proxy http://127.0.0.1:35830 --live-reload=false
-
 
 ## Development workflow
 

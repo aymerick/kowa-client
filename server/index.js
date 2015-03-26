@@ -20,9 +20,7 @@ module.exports = function(app) {
   proxies.forEach(function(route) { route(app); });
 
 
-  //
-  // Permits to serve files in /upload
-  //
+  // Permits to serve files in /upload directory
   var express = require('express');
   app.use('/upload', express.static(__dirname + "/../upload"));
 };
