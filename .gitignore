@@ -16,8 +16,7 @@
 npm-debug.log
 testem.log
 
-# img fixtures
-/public/fixtures
+.DS_Store
 
 # uploads
-/public/upload
+/upload

@@ -50,6 +50,7 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "liquid-fire": "^0.17.1",
+    "morgan": "^1.5.2",
     "rimraf": "2.2.8"
   },
   "dependencies": {
