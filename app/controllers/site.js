@@ -12,15 +12,12 @@ var SiteController = Ember.ObjectController.extend({
       // hard load to reset all controllers
       // @todo Find a better way to do that !
       window.location = window.location.origin + "/" + this.get('selectedSite').get('id');
-      // this.transitionToRoute('site', this.get('selectedSite'));
-      // this.unloadModels();
     }
   }.observes('selectedSite'),
 
   viewSiteUrl: function() {
-    // @todo FIXME !
-    return "http://127.0.0.1:48910/" + this.get('selectedSite').get('id');
-  }.property('selectedSite'),
+    return this.get('selectedSite.baseUrl');
+  }.property('selectedSite.baseUrl'),
 
   // i18n for attributes values and components parameters
   i18n: function() {
