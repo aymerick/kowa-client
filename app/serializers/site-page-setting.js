@@ -1,28 +1,27 @@
 import DS from 'ember-data';
 
-var SITE_PAGE_SETTINGS_SERIALIZER_FIELDS = [
-  'kind', 'title', 'tagline', 'cover', 'disabled'
-];
+var ATTRS = [ 'kind', 'title', 'tagline', 'disabled' ];
+
+var BELONGS_TO = [ 'cover' ];
 
 var SitePageSettingsSerializer = DS.RESTSerializer.extend({
-  serialize: function(pageSettings, options) {
-    var result = pageSettings.getProperties(SITE_PAGE_SETTINGS_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      var settingsId = pageSettings.get('id');
-      if (settingsId != null) {
-        result['id'] = settingsId;
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
+    }
+
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
+
+    BELONGS_TO.forEach(function(fieldName) {
+      var fieldId = snapshot.belongsTo(fieldName, { id: true });
+      if (fieldId) {
+        result[fieldName] = fieldId;
       }
-    }
-
-    // cover
-    if (result['cover']) {
-      result['cover'] = result['cover'].get('id');
-    }
-
-    if (result['cover'] == null) {
-      delete(result['cover']);
-    }
+    });
 
     return result;
   }

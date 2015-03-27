@@ -1,47 +1,32 @@
 import DS from 'ember-data';
 
-var SITE_SERIALIZER_FIELDS = [
+var ATTRS = [
   'name', 'tagline', 'description',
   'moreDesc', 'joinText', 'email', 'address',
   'facebook', 'twitter', 'googlePlus', 'googleAnalytics',
-  'logo', 'cover', 'favicon', 'theme', 'baseUrl', 'uglyUrl',
-  'nameInNavBar', 'lang'
+  'theme', 'baseUrl', 'uglyUrl', 'nameInNavBar', 'lang'
 ];
 
+var BELONGS_TO = [ 'logo', 'cover', 'favicon' ];
+
 var SiteSerializer = DS.RESTSerializer.extend({
-  serialize: function(site, options) {
-    var result = site.getProperties(SITE_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      result['id'] = site.get('id');
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
     }
 
-    // logo
-    if (result['logo']) {
-      result['logo'] = result['logo'].get('id');
-    }
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
 
-    if (result['logo'] == null) {
-      delete(result['logo']);
-    }
-
-    // cover
-    if (result['cover']) {
-      result['cover'] = result['cover'].get('id');
-    }
-
-    if (result['cover'] == null) {
-      delete(result['cover']);
-    }
-
-    // favicon
-    if (result['favicon']) {
-      result['favicon'] = result['favicon'].get('id');
-    }
-
-    if (result['favicon'] == null) {
-      delete(result['favicon']);
-    }
+    BELONGS_TO.forEach(function(fieldName) {
+      var fieldId = snapshot.belongsTo(fieldName, { id: true });
+      if (fieldId) {
+        result[fieldName] = fieldId;
+      }
+    });
 
     return result;
   }

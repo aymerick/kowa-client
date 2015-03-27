@@ -1,16 +1,18 @@
 import DS from 'ember-data';
 
-var USER_SERIALIZER_FIELDS = [
-  'firstName', 'lastName', 'lang'
-];
+var ATTRS = [ 'firstName', 'lastName', 'lang' ];
 
 var UserSerializer = DS.RESTSerializer.extend({
-  serialize: function(user, options) {
-    var result = user.getProperties(USER_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      result['id'] = user.get('id');
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
     }
+
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
 
     return result;
   }

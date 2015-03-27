@@ -1,31 +1,27 @@
 import DS from 'ember-data';
 
-var POST_SERIALIZER_FIELDS = [ 'title', 'body', 'format', 'site', 'cover' ];
+var ATTRS = [ 'title', 'body', 'format' ];
+
+var BELONGS_TO = [ 'site', 'cover' ];
 
 var PostSerializer = DS.RESTSerializer.extend({
-  serialize: function(post, options) {
-    var result = post.getProperties(POST_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      var postId = post.get('id');
-      if (postId != null) {
-        result['id'] = postId;
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
+    }
+
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
+
+    BELONGS_TO.forEach(function(fieldName) {
+      var fieldId = snapshot.belongsTo(fieldName, { id: true });
+      if (fieldId) {
+        result[fieldName] = fieldId;
       }
-    }
-
-    // site
-    if (result['site']) {
-      result['site'] = result['site'].get('id');
-    }
-
-    // cover
-    if (result['cover']) {
-      result['cover'] = result['cover'].get('id');
-    }
-
-    if (result['cover'] == null) {
-      delete(result['cover']);
-    }
+    });
 
     return result;
   }

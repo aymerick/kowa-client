@@ -1,17 +1,27 @@
 import DS from 'ember-data';
 
-var EVENT_SERIALIZER_FIELDS = [ 'startDate', 'endDate', 'title', 'body', 'format', 'place', 'site', 'cover' ];
+var ATTRS = [ 'startDate', 'endDate', 'title', 'body', 'format', 'place' ];
+
+var BELONGS_TO = [ 'site', 'cover' ];
 
 var EventSerializer = DS.RESTSerializer.extend({
-  serialize: function(eventModel, options) {
-    var result = eventModel.getProperties(EVENT_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      var eventId = eventModel.get('id');
-      if (eventId != null) {
-        result['id'] = eventId;
-      }
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
     }
+
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
+
+    BELONGS_TO.forEach(function(fieldName) {
+      var fieldId = snapshot.belongsTo(fieldName, { id: true });
+      if (fieldId) {
+        result[fieldName] = fieldId;
+      }
+    });
 
     // startDate
     if (result['startDate'] == null) {
@@ -21,20 +31,6 @@ var EventSerializer = DS.RESTSerializer.extend({
     // endDate
     if (result['endDate'] == null) {
       delete(result['endDate']);
-    }
-
-    // site
-    if (result['site']) {
-      result['site'] = result['site'].get('id');
-    }
-
-    // cover
-    if (result['cover']) {
-      result['cover'] = result['cover'].get('id');
-    }
-
-    if (result['cover'] == null) {
-      delete(result['cover']);
     }
 
     return result;

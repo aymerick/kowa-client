@@ -1,31 +1,27 @@
 import DS from 'ember-data';
 
-var MEMBER_SERIALIZER_FIELDS = [ 'fullname', 'role', 'description', 'site', 'photo' ];
+var ATTRS = [ 'fullname', 'role', 'description' ];
+
+var BELONGS_TO = [ 'site', 'photo' ];
 
 var MemberSerializer = DS.RESTSerializer.extend({
-  serialize: function(member, options) {
-    var result = member.getProperties(MEMBER_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      var memberId = member.get('id');
-      if (memberId != null) {
-        result['id'] = memberId;
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
+    }
+
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
+
+    BELONGS_TO.forEach(function(fieldName) {
+      var fieldId = snapshot.belongsTo(fieldName, { id: true });
+      if (fieldId) {
+        result[fieldName] = fieldId;
       }
-    }
-
-    // site
-    if (result['site']) {
-      result['site'] = result['site'].get('id');
-    }
-
-    // photo
-    if (result['photo']) {
-      result['photo'] = result['photo'].get('id');
-    }
-
-    if (result['photo'] == null) {
-      delete(result['photo']);
-    }
+    });
 
     return result;
   }

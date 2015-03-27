@@ -1,31 +1,26 @@
 import DS from 'ember-data';
 
-var ACTIVITY_SERIALIZER_FIELDS = [ 'title', 'summary', 'body', 'site', 'cover' ];
+var ATTRS = [ 'title', 'summary', 'body' ];
+var BELONGS_TO = [ 'site', 'cover' ];
 
 var ActivitySerializer = DS.RESTSerializer.extend({
-  serialize: function(activity, options) {
-    var result = activity.getProperties(ACTIVITY_SERIALIZER_FIELDS);
+  serialize: function(snapshot, options) {
+    var result = {};
 
-    if (options && options.includeId) {
-      var activityId = activity.get('id');
-      if (activityId != null) {
-        result['id'] = activityId;
+    if (options && options.includeId && snapshot.id) {
+      result['id'] = snapshot.id;
+    }
+
+    ATTRS.forEach(function(fieldName) {
+      result[fieldName] = snapshot.attr(fieldName);
+    });
+
+    BELONGS_TO.forEach(function(fieldName) {
+      var fieldId = snapshot.belongsTo(fieldName, { id: true });
+      if (fieldId) {
+        result[fieldName] = fieldId;
       }
-    }
-
-    // site
-    if (result['site']) {
-      result['site'] = result['site'].get('id');
-    }
-
-    // cover
-    if (result['cover']) {
-      result['cover'] = result['cover'].get('id');
-    }
-
-    if (result['cover'] == null) {
-      delete(result['cover']);
-    }
+    });
 
     return result;
   }
