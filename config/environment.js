@@ -20,6 +20,7 @@ module.exports = function(environment) {
       // thanks to ember-feature-flags addon
       FEATURES: {
         'show-content-format': false,
+        'show-page-settings': false
       },
 
       // oauth client id/secret (not used for now)
