@@ -14,11 +14,19 @@ export default {
 
   // auth pages
   auth: {
+    alreadyHaveAccount: "You avez déjà créé un compte ?",
+    createAccount: "Créer un compte",
+    email: "Email",
+    enterEmail: "Votre email",
     enterPassword: "Votre mot de passe",
     enterUsername: "Votre identifiant",
     login: "Connexion",
+    loginHere: "Connectez vous ici",
     logout: 'Déconnexion',
+    noAccountYet: "Vous n'avez pas de compte ?",
     password: "Mot de passe",
+    signup: "Signup",
+    username: "Identifiant",
     usernameOrEmail: "Identifiant ou addresse mail"
   },
 

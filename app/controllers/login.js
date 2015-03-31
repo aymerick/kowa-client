@@ -10,7 +10,7 @@ var LoginController = Ember.Controller.extend(LoginControllerMixin, {
       enterUsername: this.t('auth.enterUsername'),
       enterPassword: this.t('auth.enterPassword')
     };
-  }.property() // @todo Watch current language
+  }.property() // @todo Watch current language (not logged in)
 });
 
 export default LoginController;

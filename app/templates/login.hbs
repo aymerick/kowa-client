@@ -12,5 +12,8 @@
             {{input id='login-password' class='form-control' placeholder=i18n.enterPassword type='password' required='required' value=password}}
         </div>
         <button type="submit" class="btn btn-lg btn-primary btn-block">{{t 'auth.login'}}</button>
+        <div class="login-signup">
+            {{t 'auth.noAccountYet'}} {{#link-to 'signup'}}{{t 'auth.createAccount'}}{{/link-to}}
+        </div>
     </form>
 </div>
