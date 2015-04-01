@@ -34,10 +34,16 @@ var SignupController = Ember.Controller.extend({
     };
   }.property(), // @todo Watch current language (not logged in)
 
+  resetFields: function() {
+    var self = this;
+    ['email', 'username', 'password', 'errors'].forEach(function(fieldName){
+      self.set(fieldName, null);
+    });
+  },
+
   actions: {
     signup: function() {
       var data = this.getProperties('email', 'username', 'password');
-      this.set('password', null);
 
       var self = this;
 
@@ -48,6 +54,8 @@ var SignupController = Ember.Controller.extend({
         dataType:    'json',
         contentType: 'application/x-www-form-urlencoded'
       }).then(function(response) {
+        self.resetFields();
+
         self.transitionToRoute('signup.success', {queryParams: {email: response.user.email, username: response.user.id}});
       }, function(xhr /*, status, error */) {
         self.set('errors', xhr.responseJSON.errors);
