@@ -25,7 +25,7 @@ export default {
     logout: 'Déconnexion',
     noAccountYet: "Vous n'avez pas de compte ?",
     password: "Mot de passe",
-    signup: "Signup",
+    signup: "Créer le compte",
     username: "Identifiant",
     usernameOrEmail: "Identifiant ou addresse mail"
   },
