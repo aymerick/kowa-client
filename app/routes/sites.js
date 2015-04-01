@@ -7,12 +7,11 @@ var SitesRoute = AuthenticatedRoute.extend({
 
     return this.session.get('currentUser').then(function(currentUser){
       // setup locale
-      var application = self.container.lookup('application:main');
-      application.set('locale', currentUser.get('lang'));
+      self.get('langService').set('userLang', currentUser.get('lang'));
 
-      // observers locale change
+      // observe user locale change
       Ember.addObserver(currentUser, 'lang', function() {
-        application.set('locale', currentUser.get('lang'));
+        self.get('langService').set('userLang', currentUser.get('lang'));
       });
 
       return currentUser.get('sites');

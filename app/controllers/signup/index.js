@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 var SignupController = Ember.Controller.extend({
+  lang: Ember.computed.alias('langService.currentLang'),
+
   errors: null,
+
   haveError: Ember.computed.notEmpty('errors'),
 
   errorMessages: function() {

@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 var SettingsGeneralController = Ember.ObjectController.extend({
-  needs: ['application', 'settings'],
+  needs: [ 'settings'],
   site: Ember.computed.alias('controllers.settings.model'),
-  allLangs: Ember.computed.alias('controllers.application.allLangs'),
+  allLangs: Ember.computed.alias('langService.allLangs'),
   isSaving: false,
 
   // @todo Get that list from the server
