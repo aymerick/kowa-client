@@ -2,6 +2,8 @@ import Ember from 'ember';
 import PaginationControllerMixin from 'kowa/mixins/pagination-controller';
 
 var SelectImageModal = Ember.ArrayController.extend(PaginationControllerMixin, {
+  itemController: 'settings/image',
+
   sortProperties: ['createdAt'],
   sortAscending: false,
 

@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
-var SettingsActivitiesActivityController = Ember.ObjectController.extend({
+var SettingsActivitiesActivityController = Ember.Controller.extend({
+  needs: [ 'settings'],
+  site: Ember.computed.alias('controllers.settings.model'),
+
   isSaving: false,
 
   actions: {

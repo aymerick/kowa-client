@@ -7,7 +7,7 @@
 <form class="settings-body" role="form" {{action 'save' on='submit'}}>
     <div class="form-group">
         <label for="account-firstName">{{t 'account.firstName'}}</label>
-        {{input id="account-firstName" name="general[firstName]" type="text" class="form-control" value=firstName}}
+        {{input id="account-firstName" name="general[firstName]" type="text" class="form-control" value=model.firstName}}
         <p class="info">
             {{t 'account.firstNameInfos'}}
         </p>
@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label for="account-lastName">{{t 'account.lastName'}}</label>
-        {{input id="account-lastName" name="general[lastName]" type="text" class="form-control" value=lastName}}
+        {{input id="account-lastName" name="general[lastName]" type="text" class="form-control" value=model.lastName}}
         <p class="info">
             {{t 'account.lastNameInfos'}}
         </p>
@@ -23,7 +23,7 @@
 
     <div class="form-group">
         <label for="account-lang">{{t 'account.lang'}}</label>
-        {{view "select" id="account-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=lang class="form-control"}}
+        {{view "select" id="account-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=model.lang class="form-control"}}
         <p class="info">
             {{t 'account.langInfos'}}
         </p>

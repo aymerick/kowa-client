@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var LeaveEditionModal = Ember.ObjectController.extend({
+var LeaveEditionModal = Ember.Controller.extend({
   masterController: null,
   haltedTransition: null,
 

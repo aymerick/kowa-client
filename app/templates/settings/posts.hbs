@@ -6,7 +6,7 @@
 
 <form class="settings-body" role="form" {{action 'save' on='submit'}}>
     <div class="form-group">
-        {{input type="checkbox" checked=disabled}} {{t 'pageSettings.disabled'}}
+        {{input type="checkbox" checked=model.disabled}} {{t 'pageSettings.disabled'}}
         <p class="info">
             {{t 'post.pageDisabledInfos'}}
         </p>
@@ -14,7 +14,7 @@
 
     <div class="form-group">
         <label for="page-title">{{t 'pageSettings.title'}}</label>
-        {{input id="page-title" type="text" class="form-control" value=title}}
+        {{input id="page-title" type="text" class="form-control" value=model.title}}
         <p class="info">
             {{t 'post.pageTitleInfos'}}
         </p>
@@ -22,7 +22,7 @@
 
     <div class="form-group">
         <label for="page-tagline">{{t 'pageSettings.tagline'}}</label>
-        {{input id="page-tagline" type="text" class="form-control" value=tagline}}
+        {{input id="page-tagline" type="text" class="form-control" value=model.tagline}}
         <p class="info">
             {{t 'post.pageTaglineInfos'}}
         </p>
@@ -30,9 +30,9 @@
 
     <div class="form-group">
         <label for="page-cover">{{t 'pageSettings.cover'}}</label>
-        {{#if cover}}
+        {{#if model.cover}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "cover"}}>
-                <img id="page-cover" {{bind-attr src=cover.smallUrl}} alt="cover">
+                <img id="page-cover" {{bind-attr src=model.cover.smallUrl}} alt="cover">
                 <span class="remove-image" {{action 'removeCover'}}>&#10006;</span>
             </button>
         {{else}}

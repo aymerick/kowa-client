@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
-var SettingsGeneralController = Ember.ObjectController.extend({
+var SettingsGeneralController = Ember.Controller.extend({
   needs: [ 'settings'],
   site: Ember.computed.alias('controllers.settings.model'),
+
   allLangs: Ember.computed.alias('langService.allLangs'),
   isSaving: false,
 

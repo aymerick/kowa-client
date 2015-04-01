@@ -11,7 +11,7 @@
         <label for="member-photo">{{t 'member.photo'}}</label>
         {{#if model.photo}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "photo"}}>
-                <img id="member-photo" {{bind-attr src=photo.smallUrl}} alt="photo">
+                <img id="member-photo" {{bind-attr src=model.photo.smallUrl}} alt="photo">
                 <span class="remove-image" {{action 'removePhoto'}}>&#10006;</span>
             </button>
         {{else}}

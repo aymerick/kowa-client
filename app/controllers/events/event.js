@@ -1,8 +1,9 @@
 import Ember from 'ember';
 import ContentEditionController from 'kowa/mixins/content-edition-controller';
 
-var EventsEventController = Ember.ObjectController.extend(ContentEditionController, {
-  needs: ['application'],
+var EventsEventController = Ember.Controller.extend(ContentEditionController, {
+  needs: ['application', 'site'],
+  site: Ember.computed.alias('controllers.site.model'),
 
   editionRelationships: Ember.A([ 'cover' ]),
   editionDefaultTitle: 'event.untitled', // This is a i18n key

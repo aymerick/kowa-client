@@ -7,7 +7,7 @@
 <form class="settings-body" role="form" {{action 'save' on='submit'}}>
     <div class="form-group">
         <label for="site-name">{{t 'site.name'}}</label>
-        {{input id="site-name" name="general[name]" type="text" class="form-control" value=name}}
+        {{input id="site-name" name="general[name]" type="text" class="form-control" value=model.name}}
         <p class="info">
             {{t 'site.nameInfos'}}
         </p>
@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <label for="site-tagline">{{t 'site.tagline'}}</label>
-        {{input id="site-tagline" name="general[tagline]" type="text" class="form-control" value=tagline}}
+        {{input id="site-tagline" name="general[tagline]" type="text" class="form-control" value=model.tagline}}
         <p class="info">
             {{t 'site.taglineInfos'}}
         </p>
@@ -27,9 +27,9 @@
 
     <div class="form-group">
         <label for="site-logo">{{t 'site.logo'}}</label>
-        {{#if logo}}
+        {{#if model.logo}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "logo"}}>
-                <img id="site-logo" {{bind-attr src=logo.smallUrl}} alt="logo">
+                <img id="site-logo" {{bind-attr src=model.logo.smallUrl}} alt="logo">
                 <span class="remove-image" {{action 'removeLogo'}}>&#10006;</span>
             </button>
         {{else}}
@@ -42,9 +42,9 @@
 
     <div class="form-group">
         <label for="site-favicon">{{t 'site.favicon'}}</label>
-        {{#if favicon}}
+        {{#if model.favicon}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "favicon"}}>
-                <img id="site-favicon" {{bind-attr src=favicon.smallUrl}} alt="favicon">
+                <img id="site-favicon" {{bind-attr src=model.favicon.smallUrl}} alt="favicon">
                 <span class="remove-image" {{action 'removeFavicon'}}>&#10006;</span>
             </button>
         {{else}}
@@ -57,7 +57,7 @@
 
     <div class="form-group">
         <label for="site-theme">{{t 'site.theme'}}</label>
-        {{view "select" id="site-theme" content=allThemes selection=theme class="form-control"}}
+        {{view "select" id="site-theme" content=allThemes selection=model.theme class="form-control"}}
         <p class="info">
             {{t 'site.themeInfos'}}
         </p>
@@ -65,7 +65,7 @@
 
     <div class="form-group">
         <label for="site-base-url">{{t 'site.baseUrl'}}</label>
-        {{input id="site-base-url" name="general[baseUrl]" type="text" class="form-control" value=baseUrl}}
+        {{input id="site-base-url" name="general[baseUrl]" type="text" class="form-control" value=model.baseUrl}}
         <p class="info">
             {{t 'site.baseUrlInfos'}}
         </p>
@@ -73,7 +73,7 @@
 
     <div class="form-group">
         <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
-        {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=googleAnalytics}}
+        {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=model.googleAnalytics}}
         <p class="info">
             {{t 'site.googleAnalyticsInfos'}}
         </p>
@@ -81,7 +81,7 @@
 
     <div class="form-group">
         <label for="site-lang">{{t 'site.lang'}}</label>
-        {{view "select" id="site-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=lang class="form-control"}}
+        {{view "select" id="site-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=model.lang class="form-control"}}
         <p class="info">
             {{t 'site.langInfos'}}
         </p>

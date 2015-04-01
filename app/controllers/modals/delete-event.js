@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ContentDeleteModalMixin from 'kowa/mixins/content-delete-modal';
 
-var DeleteEventModal = Ember.ObjectController.extend(ContentDeleteModalMixin, {
+var DeleteEventModal = Ember.Controller.extend(ContentDeleteModalMixin, {
   deleteMsgOk: 'event.deleted', // This is an i18n key
   deleteMsgFail: 'event.deleteFailed', // This is an i18n key
 

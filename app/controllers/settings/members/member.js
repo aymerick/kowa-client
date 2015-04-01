@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
-var SettingsMembersMemberController = Ember.ObjectController.extend({
+var SettingsMembersMemberController = Ember.Controller.extend({
+  needs: [ 'settings'],
+  site: Ember.computed.alias('controllers.settings.model'),
+
   isSaving: false,
 
   actions: {

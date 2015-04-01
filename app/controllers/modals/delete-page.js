@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ContentDeleteModalMixin from 'kowa/mixins/content-delete-modal';
 
-var DeletePageModal = Ember.ObjectController.extend(ContentDeleteModalMixin, {
+var DeletePageModal = Ember.Controller.extend(ContentDeleteModalMixin, {
   deleteMsgOk: 'page.deleted', // This is an i18n key
   deleteMsgFail: 'page.deleteFailed', // This is an i18n key
 

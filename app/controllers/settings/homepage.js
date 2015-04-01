@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var SettingsHomepageController = Ember.ObjectController.extend({
+var SettingsHomepageController = Ember.Controller.extend({
   needs: ['settings'],
   site: Ember.computed.alias('controllers.settings.model'),
   isSaving: false,

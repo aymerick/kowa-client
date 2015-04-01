@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var DeleteMemberModal = Ember.ObjectController.extend({
+var DeleteMemberModal = Ember.Controller.extend({
   setupModal: function(masterController, member) {
     this.set('model', member);
   },

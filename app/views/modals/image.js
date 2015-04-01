@@ -6,14 +6,14 @@ var ImageView = Ember.View.extend({
   classNameBindings: ['isSelected', 'content.isUploading'],
 
   isSelected: function() {
-    var selectedImg = this.get('controller').get('selectedImage');
-    return (selectedImg && selectedImg.get('id') === this.get('content').get('id'));
-  }.property('controller.selectedImage'),
+    var selectedImg = this.get('controller.parentController.selectedImage');
+    return (selectedImg && selectedImg.get('id') === this.get('content.model.id'));
+  }.property('controller.parentController.selectedImage'),
 
   click: function() {
-    var image = this.get('content');
-    if (!image.get('isUploading')) {
-      this.get('controller').send('selectImage', image);
+    var imageController = this.get('content');
+    if (!imageController.get('isUploading')) {
+      this.get('controller').send('selectImage', imageController.get('model'));
     }
   }
 });

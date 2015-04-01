@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var SiteController = Ember.ObjectController.extend({
+var SiteController = Ember.Controller.extend({
   needs: ['sites'],
   userSites: Ember.computed.alias('controllers.sites.model'),
   selectedSite: Ember.computed.oneWay('model'),
