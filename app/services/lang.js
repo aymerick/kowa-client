@@ -38,8 +38,6 @@ export default Ember.Service.extend({
       result = this.get('browserLang');
     }
 
-    Ember.Logger.debug("currentLang is now: ", result);
-
     return result;
   }.property('userLang', 'browserLang'),
 
