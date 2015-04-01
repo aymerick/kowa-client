@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 var SettingsAccountController = Ember.ObjectController.extend({
-  needs: ['settings'],
-  allLangs: Ember.computed.alias('controllers.settings.allLangs'),
+  needs: ['application'],
+  allLangs: Ember.computed.alias('controllers.application.allLangs'),
 
   isSaving: false,
 
