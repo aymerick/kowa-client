@@ -1,7 +1,29 @@
 import Ember from 'ember';
 
 var SignupController = Ember.Controller.extend({
-  errorMsg: null,
+  errors: null,
+  haveError: Ember.computed.notEmpty('errors'),
+
+  errorMessages: function() {
+    var result = Ember.A();
+    var errors = this.get('errors');
+
+    for (var prop in errors) {
+      if (errors.hasOwnProperty(prop)) {
+        result.push(errors[prop]);
+      }
+    }
+
+    return result;
+  }.property('errors'),
+
+  haveSeveralErrors: function() {
+    return (this.get('errorMessages').get('length') > 1);
+  }.property('errorMessages'),
+
+  firstErrorMsg: function() {
+    return this.get('errorMessages').get('firstObject');
+  }.property('errorMessages'),
 
   // i18n for attributes values and components parameters
   i18n: function() {
@@ -26,10 +48,9 @@ var SignupController = Ember.Controller.extend({
         dataType:    'json',
         contentType: 'application/x-www-form-urlencoded'
       }).then(function(response) {
-        debugger;
         self.transitionToRoute('signup.success', {queryParams: {email: response.user.email, username: response.user.id}});
-      }, function(xhr, status, error) {
-        self.set('errorMsg', xhr.responseText);
+      }, function(xhr /*, status, error */) {
+        self.set('errors', xhr.responseJSON.errors);
       });
     }
   }

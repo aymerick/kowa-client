@@ -1,27 +1,36 @@
 <form class="signup-form" role="form" {{action 'signup' on='submit'}}>
-    {{#if errorMsg}}
+    {{#if haveError}}
         <div class="alert alert-danger" role="alert">
             <div class="media">
                 <div class="media-left">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                 </div>
                 <div class="media-body">
-                    <span class="sr-only">Error:</span>
-                    {{errorMsg}}
+                    {{#if haveSeveralErrors}}
+                        <h4>Errors:</h4>
+                        <ul>
+                            {{#each errorMsg in errorMessages}}
+                                <li>{{errorMsg}}</li>
+                            {{/each}}
+                        </ul>
+                    {{else}}
+                        <h4>Error:</h4>
+                        {{firstErrorMsg}}
+                    {{/if}}
                 </div>
             </div>
         </div>
     {{/if}}
-    <div class="form-group">
-        <label for="signup-email">{{t 'auth.email'}}</label>
+    <div {{bind-attr class=":form-group errors.email:has-error"}}>
+        <label class="control-label" for="signup-email">{{t 'auth.email'}}</label>
         {{input id='signup-email' class='form-control' placeholder=i18n.enterEmail value=email required='required' autofocus='autofocus'}}
     </div>
-    <div class="form-group">
-        <label for="signup-username">{{t 'auth.username'}}</label>
-        {{input id='signup-username' class='form-control' placeholder=i18n.enterUsername value=username required='required' autofocus='autofocus'}}
+    <div {{bind-attr class=":form-group errors.username:has-error"}}>
+        <label class="control-label" for="signup-username">{{t 'auth.username'}}</label>
+        {{input id='signup-username' class='form-control' placeholder=i18n.enterUsername value=username required='required'}}
     </div>
-    <div class="form-group">
-        <label for="signup-password">{{t 'auth.password'}}</label>
+    <div {{bind-attr class=":form-group errors.password:has-error"}}>
+        <label class="control-label" for="signup-password">{{t 'auth.password'}}</label>
         {{input id='signup-password' class='form-control' placeholder=i18n.enterPassword value=password type='password' required='required'}}
     </div>
     <button type="submit" class="btn btn-lg btn-primary btn-block">{{t 'auth.signup'}}</button>
