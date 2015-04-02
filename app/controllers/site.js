@@ -5,8 +5,6 @@ var SiteController = Ember.Controller.extend({
   userSites: Ember.computed.alias('controllers.sites.model'),
   selectedSite: Ember.computed.oneWay('model'),
 
-  hideNav: Ember.computed.match('currentPath', /(error|login|forgotten)/),
-
   selectedSiteChanged: function() {
     if (this.get('selectedSite').get('id') !== this.get('model').get('id')) {
       // hard load to reset all controllers
