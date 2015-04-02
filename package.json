@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
-    "broccoli-sass": "^0.3.3",
+    "broccoli-sass": "^0.4.0",
     "broccoli-static-compiler": "^0.2.1",
     "ember-bootstrap-datetimepicker": "^0.3.2",
     "ember-cli": "0.2.2",
