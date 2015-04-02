@@ -24,15 +24,13 @@ var PagesPageController = Ember.Controller.extend(ContentEditionController, {
     { name: "Markdown", id: 'md' }
   ],
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
-      coverImage: this.t('coverImage'),
       pageBody: this.t('page.body'),
       pageTagline: this.t('page.tagline'),
       pageTitle: this.t('page.title')
     };
-  }.property() // @todo Watch current language
+  }.property('langService.currentLang')
 });
 
 export default PagesPageController;

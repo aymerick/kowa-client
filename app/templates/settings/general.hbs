@@ -1,7 +1,7 @@
 <header class="settings-header">
     <h2 class="settings-item-title">{{t 'General'}}</h2>
 
-    <button class="btn btn-primary action-save" {{action "save"}} {{bind-attr disabled=isSaving}}><i class="fa fa-floppy-o"></i>{{t 'save'}}</button>
+    <button class="btn btn-primary action-save" {{action "save"}} disabled={{isSaving}}><i class="fa fa-floppy-o"></i>{{t 'save'}}</button>
 </header>
 
 <form class="settings-body" role="form" {{action 'save' on='submit'}}>
@@ -29,7 +29,7 @@
         <label for="site-logo">{{t 'site.logo'}}</label>
         {{#if model.logo}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "logo"}}>
-                <img id="site-logo" {{bind-attr src=model.logo.smallUrl}} alt="logo">
+                <img id="site-logo" src={{model.logo.smallUrl}} alt="logo">
                 <span class="remove-image" {{action 'removeLogo'}}>&#10006;</span>
             </button>
         {{else}}
@@ -44,7 +44,7 @@
         <label for="site-favicon">{{t 'site.favicon'}}</label>
         {{#if model.favicon}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "favicon"}}>
-                <img id="site-favicon" {{bind-attr src=model.favicon.smallUrl}} alt="favicon">
+                <img id="site-favicon" src={{model.favicon.smallUrl}} alt="favicon">
                 <span class="remove-image" {{action 'removeFavicon'}}>&#10006;</span>
             </button>
         {{else}}

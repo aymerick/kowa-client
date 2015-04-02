@@ -1,7 +1,7 @@
 <header class="settings-header settings-contact">
     <h2 class="settings-item-title">{{t 'Contact'}}</h2>
 
-    <button class="btn btn-primary action-save" {{action "save"}} {{bind-attr disabled=isSaving}}><i class="fa fa-floppy-o"></i> {{t 'save'}}</button>
+    <button class="btn btn-primary action-save" {{action "save"}} disabled={{isSaving}}><i class="fa fa-floppy-o"></i> {{t 'save'}}</button>
     {{#if features.showPageSettings}}
         {{#link-to "settings.contact.page" class="btn btn-default action-page" title="Page settings"}}<i class="fa fa-cog"></i> {{t 'PageSettings'}}{{/link-to}}
     {{/if}}

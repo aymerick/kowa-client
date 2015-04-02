@@ -13,7 +13,7 @@
             {{#link-to "settings.activities.activity" activity class="settings-item" title=i18n.activityEdit}}
                 <div class="settings-item-cover">
                     {{#if activity.cover}}
-                        <img {{bind-attr src=activity.cover.thumbUrl alt=i18n.coverImage}} class="thumbnail" />
+                        <img src={{activity.cover.thumbUrl}} alt={{t 'coverImage'}} class="thumbnail" />
                     {{else}}
                         <div class="thumbnail no-image text-center"></div>
                     {{/if}}

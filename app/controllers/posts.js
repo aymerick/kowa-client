@@ -5,14 +5,12 @@ var PostsController = Ember.ArrayController.extend(PaginationControllerMixin, {
   sortProperties: ['createdAt'],
   sortAscending: false,
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
       newPost: this.t('post.new'),
-      editPost: this.t('post.edit'),
-      coverImage: this.t('coverImage')
+      editPost: this.t('post.edit')
     };
-  }.property() // @todo Watch current language
+  }.property('langService.currentLang')
 });
 
 export default PostsController;

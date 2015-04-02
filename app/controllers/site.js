@@ -17,14 +17,7 @@ var SiteController = Ember.Controller.extend({
 
   viewSiteUrl: function() {
     return this.get('selectedSite.baseUrl');
-  }.property('selectedSite.baseUrl'),
-
-  // i18n for attributes values and components parameters
-  i18n: function() {
-    return {
-      visitSite: this.t('visitSite'),
-    };
-  }.property() // @todo Watch current language
+  }.property('selectedSite.baseUrl')
 });
 
 export default SiteController;

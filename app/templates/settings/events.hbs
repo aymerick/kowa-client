@@ -32,7 +32,7 @@
         <label for="page-cover">{{t 'pageSettings.cover'}}</label>
         {{#if model.cover}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "cover"}}>
-                <img id="page-cover" {{bind-attr src=model.cover.smallUrl}} alt="cover">
+                <img id="page-cover" src={{model.cover.smallUrl}} alt={{t 'coverImage'}}>
                 <span class="remove-image" {{action 'removeCover'}}>&#10006;</span>
             </button>
         {{else}}

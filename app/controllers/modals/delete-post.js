@@ -5,14 +5,13 @@ var DeletePostModal = Ember.Controller.extend(ContentDeleteModalMixin, {
   deleteMsgOk: 'post.deleted', // This is an i18n key
   deleteMsgFail: 'post.deleteFailed', // This is an i18n key
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
       deleteQuestion: this.t('post.deleteQuestion'),
       'delete': this.t('delete'),
       cancel: this.t('cancel')
     };
-  }.property() // @todo Watch current language
+  }.property('langService.currentLang')
 });
 
 export default DeletePostModal;

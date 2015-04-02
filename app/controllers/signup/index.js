@@ -28,14 +28,13 @@ var SignupController = Ember.Controller.extend({
     return this.get('errorMessages').get('firstObject');
   }.property('errorMessages'),
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
       enterEmail: this.t('auth.enterEmail'),
       enterUsername: this.t('auth.enterUsername'),
       enterPassword: this.t('auth.enterPassword')
     };
-  }.property(), // @todo Watch current language (not logged in)
+  }.property('langService.currentLang'),
 
   resetFields: function() {
     var self = this;

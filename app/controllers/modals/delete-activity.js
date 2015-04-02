@@ -18,14 +18,13 @@ var DeleteActivityModal = Ember.Controller.extend({
     }
   },
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
       deleteQuestion: this.t('activity.deleteQuestion'),
       'delete': this.t('delete'),
       cancel: this.t('cancel')
     };
-  }.property() // @todo Watch current language
+  }.property('langService.currentLang')
 });
 
 export default DeleteActivityModal;

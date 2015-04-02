@@ -3,7 +3,7 @@
         <div class="content-cover">
             {{#if model.cover}}
                 <button type="button" class="thumbnail select-image small-kind" {{action "openModal" "select-image" controller "model.cover"}}>
-                    <img {{bind-attr src=model.cover.thumbUrl alt=i18n.coverImage}} />
+                    <img src={{model.cover.thumbUrl}} alt={{t 'coverImage'}} />
                     <span class="remove-image" {{action 'removeCover'}}>&#10006;</span>
                 </button>
             {{else}}
@@ -45,8 +45,8 @@
         </div>
 
         <div class="content-actions">
-            <button {{action "openModal" "delete-event" controller 'events.index'}} class="btn btn-danger content-action-button action-delete" {{bind-attr disabled=cannotDelete}}>{{t 'delete'}}</button>
-            <button {{action "saveContent"}} class="btn btn-primary content-action-button action-save" {{bind-attr disabled=cannotSave}}><i class="fa fa-floppy-o"></i> {{t 'save'}}</button>
+            <button {{action "openModal" "delete-event" controller 'events.index'}} class="btn btn-danger content-action-button action-delete" disabled={{cannotDelete}}>{{t 'delete'}}</button>
+            <button {{action "saveContent"}} class="btn btn-primary content-action-button action-save" disabled={{cannotSave}}><i class="fa fa-floppy-o"></i> {{t 'save'}}</button>
         </div>
     </header>
     <section class="content-body content-editor">

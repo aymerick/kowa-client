@@ -13,7 +13,7 @@
             {{#link-to "settings.members.member" member class="settings-item" title=i18n.memberEdit}}
                 <div class="settings-item-cover">
                     {{#if member.photo}}
-                        <img {{bind-attr src=member.photo.thumbUrl alt=i18n.photo}} class="thumbnail" />
+                        <img src={{member.photo.thumbUrl}} alt=i18n.photo class="thumbnail" />
                     {{else}}
                         <div class="thumbnail no-image text-center"></div>
                     {{/if}}

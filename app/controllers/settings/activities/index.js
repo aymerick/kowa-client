@@ -3,13 +3,11 @@ import Ember from 'ember';
 var SettingsActivitiesController = Ember.ArrayController.extend({
   sortProperties: ['createdAt'],
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
-      coverImage: this.t('coverImage'),
       activityEdit: this.t('activity.edit')
     };
-  }.property() // @todo Watch current language
+  }.property('langService.currentLang')
 });
 
 export default SettingsActivitiesController;

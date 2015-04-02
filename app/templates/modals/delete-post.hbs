@@ -2,7 +2,7 @@
     <h2>{{model.title}}</h2>
     {{#if model.cover}}
         <p>
-            <img {{bind-attr src=model.cover.smallUrl}} class="img-responsive center-block" />
+            <img src={{model.cover.smallUrl}} class="img-responsive center-block" />
         </p>
     {{/if}}
 {{/modal-dialog}}

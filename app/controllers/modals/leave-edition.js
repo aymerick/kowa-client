@@ -32,14 +32,13 @@ var LeaveEditionModal = Ember.Controller.extend({
     }
   },
 
-  // i18n for attributes values and components parameters
   i18n: function() {
     return {
       leaveQuestion: this.t('edition.leaveQuestion'),
       leave: this.t('edition.leave'),
       stay: this.t('edition.stay')
     };
-  }.property() // @todo Watch current language
+  }.property('langService.currentLang')
 });
 
 export default LeaveEditionModal;

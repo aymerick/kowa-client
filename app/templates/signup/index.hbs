@@ -21,15 +21,15 @@
             </div>
         </div>
     {{/if}}
-    <div {{bind-attr class=":form-group errors.email:has-error"}}>
+    <div class="form-group {{if errors.email 'has-error'}}"}}>
         <label class="control-label" for="signup-email">{{t 'auth.email'}}</label>
         {{input id='signup-email' class='form-control' placeholder=i18n.enterEmail value=email required='required' autofocus='autofocus'}}
     </div>
-    <div {{bind-attr class=":form-group errors.username:has-error"}}>
+    <div class="form-group {{if errors.username 'has-error'}}"}}>
         <label class="control-label" for="signup-username">{{t 'auth.username'}}</label>
         {{input id='signup-username' class='form-control' placeholder=i18n.enterUsername value=username required='required'}}
     </div>
-    <div {{bind-attr class=":form-group errors.password:has-error"}}>
+    <div class="form-group {{if errors.password 'has-error'}}"}}>
         <label class="control-label" for="signup-password">{{t 'auth.password'}}</label>
         {{input id='signup-password' class='form-control' placeholder=i18n.enterPassword value=password type='password' required='required'}}
     </div>

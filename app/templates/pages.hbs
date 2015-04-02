@@ -8,7 +8,7 @@
             {{#link-to "pages.page" item title=i18n.editPage}}
                 {{#if item.cover}}
                     <div class="item-cover">
-                        <img {{bind-attr src=item.cover.squareUrl alt=i18n.coverImage}} />
+                        <img src={{item.cover.squareUrl}} alt={{t 'coverImage'}} />
                     </div>
                 {{/if}}
                 <div class="item-infos">

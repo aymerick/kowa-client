@@ -11,7 +11,7 @@
         <label for="activity-cover">{{t 'activity.cover'}}</label>
         {{#if model.cover}}
             <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "cover"}}>
-                <img id="activity-cover" {{bind-attr src=model.cover.smallUrl}} alt="cover">
+                <img id="activity-cover" src={{model.cover.smallUrl}} alt={{t 'coverImage'}}>
                 <span class="remove-image" {{action 'removeCover'}}>&#10006;</span>
             </button>
         {{else}}
