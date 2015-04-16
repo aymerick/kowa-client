@@ -26,6 +26,8 @@ export default {
     noAccountYet: "Vous n'avez pas de compte ?",
     password: "Mot de passe",
     signup: "Créer le compte",
+    signupCheckMail: "Veuillez vérifier vos mails et cliquer sur <strong>Activer le compte</strong> dans le message que nous venons d'envoyer à cette addresse:",
+    signupThanks: "Merci d'avoir créé un compte !",
     username: "Identifiant",
     usernameOrEmail: "Identifiant ou addresse mail"
   },

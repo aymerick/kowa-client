@@ -26,6 +26,8 @@ export default {
     noAccountYet: "You have no account yet?",
     password: "Password",
     signup: "Signup",
+    signupCheckMail: "Please check your email and click <strong>Activate Account</strong> in the message we just sent to that email:",
+    signupThanks: "Thanks For Signing Up!",
     username: "Username",
     usernameOrEmail: "Username or Email address"
   },

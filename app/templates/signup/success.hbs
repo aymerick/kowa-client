@@ -4,9 +4,12 @@
             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
         </div>
         <div class="media-body">
-            <h4 class="media-heading">Thanks For Signing Up!</h4>
+            <h4 class="media-heading">{{t 'auth.signupThanks'}}</h4>
             <p>
-                Please check your email and click <strong>Activate Account</strong> in the message we just sent to {{email}}.
+                {{{t 'auth.signupCheckMail'}}}
+            </p>
+            <p>
+                {{email}}
             </p>
         </div>
     </div>
