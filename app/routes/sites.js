@@ -19,11 +19,15 @@ var SitesRoute = AuthenticatedRoute.extend({
   },
 
   afterModel: function(sites, transition) {
-    // redirects / to /:site_id
     if (!transition.params.site) {
       var firstSite = sites.get('lastObject');
       if (firstSite) {
+        // redirects / to /:site_id
         this.transitionTo('site', firstSite);
+      }
+      else {
+        // no site yet, so redirects to /setup
+        this.transitionTo('setup');
       }
     }
   }

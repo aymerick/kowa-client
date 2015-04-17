@@ -16,6 +16,9 @@ Router.map(function() {
     this.route('failed');
   });
 
+  // setup
+  this.route('setup');
+
   // sites
   this.resource('sites', {path: '/'}, function() {
     // site
