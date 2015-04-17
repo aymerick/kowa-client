@@ -21,9 +21,9 @@ var SignupErrorController = Ember.Controller.extend({
         data:        data,
         dataType:    'json',
         contentType: 'application/x-www-form-urlencoded'
-      }).then(function(response) {
+      }).then(function(/* response */) {
         self.set('emailSent', true);
-      }, function(xhr /*, status, error */) {
+      }, function(/*xhr , status, error */) {
         self.get('flashes').danger('Failed to send email.');
 
         self.set('emailError', true);
