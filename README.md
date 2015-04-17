@@ -57,7 +57,7 @@ Continous testing with [testem](https://github.com/airportyh/testem):
 
 Generate production distribution with:
 
-    $ ember build --environment=production
+    $ ember build -prod
 
 
 ## Sublime Text
