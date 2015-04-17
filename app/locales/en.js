@@ -9,6 +9,7 @@ export default {
   save: 'Save',
   select: 'Select',
   selectCover: 'Select Cover',
+  sendEmailAgain: 'Send Email Again',
   toogleNavigation: 'Toggle navigation',
   visitSite: 'Visit Site',
 
@@ -27,6 +28,11 @@ export default {
     password: "Password",
     signup: "Signup",
     signupCheckMail: "Please check your email and click <strong>Activate Account</strong> in the message we just sent to that email:",
+    signupCheckMailAgain: "Please check your email and click <strong>Activate Account</strong> in the new message we just sent to you.",
+    signupFailed: "There was an error with your account validation.",
+    signupFailedContactUs: "This is embarassing, we can't send you a new validation email. Please contact us to solve that issue:",
+    signupFailedRetry: "Please click on the button below to receive a new validation email.",
+    signupMailResent: "A new mail has been sent.",
     signupThanks: "Thanks For Signing Up!",
     username: "Username",
     usernameOrEmail: "Username or Email address"

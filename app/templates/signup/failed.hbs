@@ -1,0 +1,41 @@
+{{#if emailSent}}
+    <div class="alert alert-success" role="alert">
+        <div class="media">
+            <div class="media-left">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{t 'auth.signupMailResent'}}</h4>
+                <p>
+                    {{{t 'auth.signupCheckMailAgain'}}}
+                </p>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <div class="alert alert-danger" role="alert">
+        <div class="media">
+            <div class="media-left">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{t 'auth.signupFailed'}}</h4>
+                {{#if emailError}}
+                    <p>
+                        {{t 'auth.signupFailedContactUs'}}
+                    </p>
+                    <p>
+                        @todo SERVICE EMAIL
+                    </p>
+                {{else}}
+                    <p>
+                        {{t 'auth.signupFailedRetry'}}
+                    </p>
+                    <form role="form" {{action 'sendEmail' on='submit'}}>
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">{{t 'sendEmailAgain'}}</button>
+                    </form>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{/if}}

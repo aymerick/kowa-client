@@ -6,11 +6,14 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // auth - account
+  // auth
   this.route('login');
-  this.route('forgotten'); // @todo
+
+  // signup
   this.resource('signup', function() {
     this.route('success');
+    this.route('validate');
+    this.route('failed');
   });
 
   // sites

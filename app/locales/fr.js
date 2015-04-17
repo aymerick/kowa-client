@@ -9,6 +9,7 @@ export default {
   save: 'Sauvegarder',
   select: 'Selectionner',
   selectCover: 'Choisir Image',
+  sendEmailAgain: 'Renvoyer le mail',
   toogleNavigation: 'Menu',
   visitSite: 'Voir le site',
 
@@ -27,6 +28,11 @@ export default {
     password: "Mot de passe",
     signup: "Créer le compte",
     signupCheckMail: "Veuillez vérifier vos mails et cliquer sur <strong>Activer le compte</strong> dans le message que nous venons d'envoyer à cette addresse:",
+    signupCheckMailAgain: "Veuillez vérifier vos mails et cliquer sur <strong>Activer le compte</strong> dans le nouveau message que nous venons de vous envoyer.",
+    signupFailed: "Une erreur s'est produite lors de la validation de votre compte.",
+    signupFailedContactUs: "Voilà qui est embarassant, nous n'arrivons pas à vous envoyer un nouvel email de validation. Veuillez nous contacter pour résoudre ce problème:",
+    signupFailedRetry: "Veuillez cliquer sur le bouton ci-dessous pour recevoir un nouvel email de validation.",
+    signupMailResent: "Un nouvel email a été envoyé.",
     signupThanks: "Merci d'avoir créé un compte !",
     username: "Identifiant",
     usernameOrEmail: "Identifiant ou addresse mail"
