@@ -87,3 +87,15 @@
         </p>
     </div>
 </form>
+
+<hr />
+
+<form class="settings-body" role="form">
+    <div class="form-group">
+        <label for="site-delete">{{t 'site.delete'}}</label>
+        <button {{action "openModal" "delete-site" controller model bubbles=false}} id="site-delete" class="btn btn-danger">{{t 'site.delete'}}</button>
+        <p class="info">
+            {{t 'site.deleteInfos'}}
+        </p>
+    </div>
+</form>

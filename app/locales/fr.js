@@ -220,6 +220,12 @@ export default {
   site: {
     baseUrl: 'URL',
     baseUrlInfos: "Indiquez l'adresse de votre site web",
+    'delete': 'Supprimer le site',
+    deleted: 'Site supprimé',
+    deleteFailed: "Erreur lors de la suppression du site",
+    deleteInfos: "Une fois supprimé il n'y a plus de retour en arrière possible. Soyez bien certain de ce que vous faites.",
+    deleteQuestion: "Etes-vous certain de vouloir supprimer votre site ?",
+    deleteWarning: "Attention ! Tous les contenus de ce site seront supprimés, et il sera impossible de revenir en arrière.",
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
     favicon: 'Favicon',
     faviconInfos: "Une icone de 16x16 pixels qui s'affichera dans le navigateur des visiteurs de votre site web",

@@ -1,0 +1,17 @@
+{{#modal-dialog title=i18n.deleteQuestion ok='delete' okText=i18n.delete okClass='btn-danger' close='closeModal' closeText=i18n.cancel}}
+    <h2>{{model.name}}</h2>
+    {{#if model.tagline}}
+        <p>
+            {{model.tagline}}
+        </p>
+    {{/if}}
+    <p>
+        {{{model.description}}}
+    </p>
+    <br />
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Warning:</span>
+      {{i18n.deleteWarning}}
+    </div>
+{{/modal-dialog}}
