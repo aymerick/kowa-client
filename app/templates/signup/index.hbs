@@ -7,14 +7,14 @@
                 </div>
                 <div class="media-body">
                     {{#if haveSeveralErrors}}
-                        <h4>Errors:</h4>
+                        <h4>{{t 'errors'}}</h4>
                         <ul>
                             {{#each errorMsg in errorMessages}}
                                 <li>{{errorMsg}}</li>
                             {{/each}}
                         </ul>
                     {{else}}
-                        <h4>Error:</h4>
+                        <h4>{{t 'error'}}</h4>
                         {{firstErrorMsg}}
                     {{/if}}
                 </div>

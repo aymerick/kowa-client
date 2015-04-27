@@ -33,6 +33,7 @@
 
                     {{#rl-dropdown tagName="ul" class="dropdown-menu dropdown-menu-right" closeOnChildClick="a:link"}}
                         <li>{{#link-to 'settings.account'}}<i class="fa fa-fw fa-user"></i><span class="choice-title">{{t 'yourAccount'}}</span>{{/link-to}}</li>
+                        <li>{{#link-to 'setup' (query-params backSite=selectedSite.id)}}<i class="fa fa-fw fa-plus"></i><span class="choice-title">{{t 'newSite'}}</span>{{/link-to}}</li>
                         <li role="presentation" class="divider"></li>
                         <li><a {{action 'invalidateSession'}}><i class="fa fa-fw fa-sign-out"></i><span class="choice-title">{{t 'auth.logout'}}</span></a></li>
                     {{/rl-dropdown}}

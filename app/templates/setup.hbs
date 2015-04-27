@@ -1,3 +1,62 @@
-NOT IMPLEMENTED YET
+<div class="container setup-box">
+    <div class="setup-logo">
+        <img src="/images/ninja_150x150.png" alt="Kowa Logo" class="img-responsive" />
+    </div>
 
-<a {{action 'invalidateSession'}}><i class="fa fa-fw fa-sign-out"></i><span class="choice-title">{{t 'auth.logout'}}</span></a>
+    <form class="setup-form" role="form" {{action 'createSite' on='submit'}}>
+        {{#if haveError}}
+            <div class="alert alert-danger" role="alert">
+                <div class="media">
+                    <div class="media-left">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    </div>
+                    <div class="media-body">
+                        {{#if haveSeveralErrors}}
+                            <h4>{{t 'errors'}}</h4>
+                            <ul>
+                                {{#each errorMsg in errorMessages}}
+                                    <li>{{errorMsg}}</li>
+                                {{/each}}
+                            </ul>
+                        {{else}}
+                            <h4>{{t 'error'}}</h4>
+                            {{firstErrorMsg}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+
+        <div class="form-group {{if errors.name 'has-error'}}">
+            <label class="control-label" for="site-name">{{t 'site.name'}}</label>
+            {{input id="site-name" type="text" class="form-control" value=model.name}}
+            <p class="info">
+                {{t 'site.nameInfos'}}
+            </p>
+        </div>
+        <div class="form-group {{if errors.id 'has-error'}}">
+            <label class="control-label" for="site-id">{{t 'setup.id'}}</label>
+            {{input id="site-id" type="text" class="form-control" value=model.id}}
+            <p class="info">
+                {{t 'setup.idInfos'}}
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="site-tagline">{{t 'site.tagline'}}</label>
+            {{input id="site-tagline" type="text" class="form-control" value=model.tagline}}
+            <p class="info">
+                {{t 'site.taglineInfos'}}
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="site-description">{{t 'homepage.description'}}</label>
+            {{tinymce-editor id="site-description" value=model.description onChange="descriptionChanged" height=300}}
+            <p class="info">
+                {{t 'homepage.descriptionInfos'}}
+            </p>
+        </div>
+
+        {{#if backSite}}{{#link-to "site" backSite class="btn btn-lg btn-danger"}}{{t 'cancel'}}{{/link-to}}{{/if}}
+        <button type="submit" class="btn btn-lg btn-primary">{{t 'setup.createSite'}}</button>
+        </form>
+</div>

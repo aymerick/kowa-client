@@ -5,6 +5,8 @@ export default {
   close: 'Close',
   coverImage: 'cover image',
   'delete': 'Delete',
+  error: 'Error',
+  errors: 'Errors',
   photo: 'Photo',
   save: 'Save',
   select: 'Select',
@@ -36,6 +38,14 @@ export default {
     signupThanks: "Thanks For Signing Up!",
     username: "Username",
     usernameOrEmail: "Username or Email address"
+  },
+
+  // site setup
+  newSite: 'New site',
+  setup: {
+    createSite: 'Create site',
+    id: 'Site id',
+    idInfos: 'This identifier will appear in your website address'
   },
 
   // common edition

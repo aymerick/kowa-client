@@ -5,6 +5,8 @@ export default {
   close: 'Fermer',
   coverImage: 'image principale',
   'delete': 'Supprimer',
+  error: 'Erreur',
+  errors: 'Erreurs',
   photo: 'Photo',
   save: 'Sauvegarder',
   select: 'Selectionner',
@@ -36,6 +38,14 @@ export default {
     signupThanks: "Merci d'avoir créé un compte !",
     username: "Identifiant",
     usernameOrEmail: "Identifiant ou addresse mail"
+  },
+
+  // site setup
+  newSite: 'Nouveau site',
+  setup: {
+    createSite: 'Créer le site',
+    id: 'Identifiant de vote site',
+    idInfos: "Cet identifiant apparaitra dans l'adresse de votre site"
   },
 
   // common edition
