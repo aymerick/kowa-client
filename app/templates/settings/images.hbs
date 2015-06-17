@@ -7,7 +7,7 @@
         <li class="image-uploader btn-success">
             {{image-uploader upload='uploadImage'}}
         </li>
-        {{#each imageController in controller itemViewClass="settings/image"}}
+        {{#each controller itemViewClass="settings/image" as |imageController|}}
             {{#if imageController.isUploading}}
                 {{spin-spinner lines=13 length=20 width=10}}
                 {{progress-bar progress=imageController.uploadProgress}}

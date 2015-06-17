@@ -9,7 +9,7 @@
 
 <section class="settings-body">
     <div class="settings-list">
-        {{#each member in controller}}
+        {{#each controller as |member|}}
             {{#link-to "settings.members.member" member class="settings-item" title=i18n.memberEdit}}
                 <div class="settings-item-cover">
                     {{#if member.photo}}

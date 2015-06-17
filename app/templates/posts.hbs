@@ -4,7 +4,7 @@
         {{#link-to "posts.new" class="content-add btn btn-success btn-xs" title=i18n.newPost}}<i class="fa fa-plus"></i> {{t 'post.new'}}{{/link-to}}
     </header>
     {{#view "paginated-scroll-box" tagName="ol" classNames="content-body"}}
-        {{#each item in controller itemView="list-item-view" itemTagName="li"}}
+        {{#each controller itemView="list-item-view" itemTagName="li" as |item|}}
             {{#link-to "posts.post" item title=i18n.editPost}}
                 {{#if item.cover}}
                     <div class="item-cover">

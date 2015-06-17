@@ -14,7 +14,7 @@
                         {{#if haveSeveralErrors}}
                             <h4>{{t 'errors'}}</h4>
                             <ul>
-                                {{#each errorMsg in errorMessages}}
+                                {{#each errorMessages as |errorMsg|}}
                                     <li>{{errorMsg}}</li>
                                 {{/each}}
                             </ul>

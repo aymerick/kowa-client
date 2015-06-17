@@ -9,7 +9,7 @@
 
 <section class="settings-body">
     <div class="settings-list">
-        {{#each activity in controller}}
+        {{#each controller as |activity|}}
             {{#link-to "settings.activities.activity" activity class="settings-item" title=i18n.activityEdit}}
                 <div class="settings-item-cover">
                     {{#if activity.cover}}

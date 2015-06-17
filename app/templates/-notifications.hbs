@@ -1,5 +1,5 @@
 <div class="notifications">
-{{#each flash in flashes.queue}}
+{{#each flashes.queue as |flash|}}
     {{flash-message flash=flash}}
 {{/each}}
 </div>
