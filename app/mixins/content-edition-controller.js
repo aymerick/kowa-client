@@ -58,7 +58,7 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
     this.set('isSaving', true);
 
     model.save().then(function (recordSaved) {
-      self.get('flashes').success(okMsg);
+      Ember.get(self, 'flashMessages').success(okMsg);
 
       self.get('editionRelationships').forEach(function (field) {
         // eg: self.set('previousCover', model.get('cover'));
@@ -72,7 +72,7 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
 
       return recordSaved;
     }).catch(function () {
-      self.get('flashes').danger(errorMsg);
+      Ember.get(self, 'flashMessages').danger(errorMsg);
     }).finally(function(){
       self.set('isSaving', false);
     });

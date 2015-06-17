@@ -22,13 +22,13 @@ var SignupValidateRoute = UnauthenticatedRoute.extend({
       dataType:    'json',
       contentType: 'application/x-www-form-urlencoded'
     }).then(function(/* response */) {
-      self.get('flashes').success('You account has been validated. You can now login.');
+      Ember.get(self, 'flashMessages').success('You account has been validated. You can now login.');
 
       // get username to prefill login form
       var username = self.parseTokenClaims(data['token'])['v'];
       self.transitionTo('login', {queryParams: {identification: username}});
     }, function(/* xhr, status, error */) {
-      self.get('flashes').danger('Failed to validate your account.');
+      Ember.get(self, 'flashMessages').danger('Failed to validate your account.');
 
       self.transitionTo('signup.failed', {queryParams: {token: data['token']}});
     });

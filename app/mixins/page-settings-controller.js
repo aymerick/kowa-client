@@ -33,11 +33,11 @@ var PageSettingsControllerMixin = Ember.Mixin.create({
           self.get('site').get('pageSettings').addObject(savedModel);
         }
 
-        self.get('flashes').success(self.t(self.get('pageSettingsSaveMsgOk')));
+        Ember.get(self, 'flashMessages').success(self.t(self.get('pageSettingsSaveMsgOk')));
 
         return savedModel;
       }).catch(function (/* errors */) {
-        self.get('flashes').danger(self.t(self.get('pageSettingsSaveMsgErr')));
+        Ember.get(self, 'flashMessages').danger(self.t(self.get('pageSettingsSaveMsgErr')));
       }).finally(function(){
         self.set('isSaving', false);
       });

@@ -33,11 +33,11 @@ var SettingsActivitiesActivityController = Ember.Controller.extend({
       this.set('isSaving', true);
 
       return this.get('model').save().then(function (model) {
-        self.get('flashes').success(self.t('activity.saved'));
+        Ember.get(self, 'flashMessages').success(self.t('activity.saved'));
 
         return model;
       }).catch(function (/* errors */) {
-        self.get('flashes').danger(self.t('activity.saveFailed'));
+        Ember.get(self, 'flashMessages').danger(self.t('activity.saveFailed'));
       }).finally(function(){
         self.set('isSaving', false);
       });

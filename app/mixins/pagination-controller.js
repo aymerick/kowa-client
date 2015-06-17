@@ -17,7 +17,7 @@ var PaginationControllerMixin = Ember.Mixin.create({
   },
 
   reportLoadError: function (/* response */) {
-    this.get('flashes').danger('Failed to fetch more data.');
+    Ember.get(this, 'flashMessages').danger('Failed to fetch more data.');
   },
 
   actions: {

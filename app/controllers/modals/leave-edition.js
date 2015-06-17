@@ -17,7 +17,7 @@ var LeaveEditionModal = Ember.Controller.extend({
       var haltedTransition = this.get('haltedTransition');
 
       if (Ember.isNone(haltedTransition) || Ember.isNone(masterController) || Ember.isNone(model)) {
-          this.get('flashes').danger('An error occured.');
+          Ember.get(this, 'flashMessages').danger('An error occured.');
 
           // bubble the action
           return true;

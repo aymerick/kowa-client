@@ -11,12 +11,12 @@ var DeleteSiteModal = Ember.Controller.extend({
       var model = this.get('model');
 
       model.destroyRecord().then(function () {
-        self.get('flashes').success(self.t('site.deleted'));
+        Ember.get(self, 'flashMessages').success(self.t('site.deleted'));
 
         // We reload everything to reset all controllers states
         window.location = window.location.origin;
       }).catch(function () {
-        self.get('flashes').danger(self.t('site.deleteFailed'));
+        Ember.get(self, 'flashMessages').danger(self.t('site.deleteFailed'));
       });
     }
   },

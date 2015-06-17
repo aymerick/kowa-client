@@ -24,7 +24,7 @@ var SignupErrorController = Ember.Controller.extend({
       }).then(function(/* response */) {
         self.set('emailSent', true);
       }, function(/*xhr , status, error */) {
-        self.get('flashes').danger('Failed to send email.');
+        Ember.get(self, 'flashMessages').danger('Failed to send email.');
 
         self.set('emailError', true);
       });

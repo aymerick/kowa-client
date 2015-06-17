@@ -31,11 +31,11 @@ var SettingsGeneralController = Ember.Controller.extend({
       this.set('isSaving', true);
 
       return this.get('model').save().then(function (model) {
-        self.get('flashes').success('Settings saved.');
+        Ember.get(self, 'flashMessages').success('Settings saved.');
 
         return model;
       }).catch(function (/* errors */) {
-        self.get('flashes').danger('Failed to save settings.');
+        Ember.get(self, 'flashMessages').danger('Failed to save settings.');
       }).finally(function(){
         self.set('isSaving', false);
       });

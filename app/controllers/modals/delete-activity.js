@@ -11,9 +11,9 @@ var DeleteActivityModal = Ember.Controller.extend({
       var model = this.get('model');
 
       model.destroyRecord().then(function () {
-          self.get('flashes').success(self.t('activity.deleted'));
+          Ember.get(self, 'flashMessages').success(self.t('activity.deleted'));
       }).catch(function () {
-          self.get('flashes').danger(self.t('activity.deleteFailed'));
+          Ember.get(self, 'flashMessages').danger(self.t('activity.deleteFailed'));
       });
     }
   },

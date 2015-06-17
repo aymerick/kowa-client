@@ -16,14 +16,14 @@ var ContentDeleteModalMixin = Ember.Mixin.create({
       var model = this.get('model');
 
       model.destroyRecord().then(function () {
-          self.get('flashes').success(self.t(self.get('deleteMsgOk')));
+          Ember.get(self, 'flashMessages').success(self.t(self.get('deleteMsgOk')));
 
           var nextRoute = self.get('nextRoute');
           if (!Ember.isNone(nextRoute)) {
             self.transitionToRoute(nextRoute);
           }
       }).catch(function () {
-          self.get('flashes').danger(self.t(self.get('deleteMsgFail')));
+          Ember.get(self, 'flashMessages').danger(self.t(self.get('deleteMsgFail')));
           model.rollback();
           model.reload();
       });

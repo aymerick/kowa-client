@@ -11,9 +11,9 @@ var DeleteMemberModal = Ember.Controller.extend({
       var model = this.get('model');
 
       model.destroyRecord().then(function () {
-          self.get('flashes').success(self.t('member.deleted'));
+          Ember.get(self, 'flashMessages').success(self.t('member.deleted'));
       }).catch(function () {
-          self.get('flashes').danger(self.t('member.deleteFailed'));
+          Ember.get(self, 'flashMessages').danger(self.t('member.deleteFailed'));
       });
     }
   },

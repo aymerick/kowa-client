@@ -47,7 +47,7 @@ var SetupController = Ember.Controller.extend({
       this.set('isSaving', true);
 
       return this.get('model').save().then(function (model) {
-        self.get('flashes').success('New site created.');
+        Ember.get(self, 'flashMessages').success('New site created.');
 
         // Redirect to new site settings
         // (we reload everything to reset all controllers states)

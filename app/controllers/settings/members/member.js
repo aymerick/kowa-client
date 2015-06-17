@@ -23,11 +23,11 @@ var SettingsMembersMemberController = Ember.Controller.extend({
       this.set('isSaving', true);
 
       return this.get('model').save().then(function (model) {
-        self.get('flashes').success(self.t('member.saved'));
+        Ember.get(self, 'flashMessages').success(self.t('member.saved'));
 
         return model;
       }).catch(function (/* errors */) {
-        self.get('flashes').danger(self.t('member.saveFailed'));
+        Ember.get(self, 'flashMessages').danger(self.t('member.saveFailed'));
       }).finally(function(){
         self.set('isSaving', false);
       });

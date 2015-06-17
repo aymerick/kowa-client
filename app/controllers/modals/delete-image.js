@@ -14,9 +14,9 @@ var DeleteImageModal = Ember.Controller.extend({
       var model = this.get('model');
 
       model.destroyRecord().then(function () {
-          self.get('flashes').success(self.t('image.deleted'));
+          Ember.get(self, 'flashMessages').success(self.t('image.deleted'));
       }).catch(function () {
-          self.get('flashes').danger(self.t('image.deleteFailed'));
+          Ember.get(self, 'flashMessages').danger(self.t('image.deleteFailed'));
           model.rollback();
           model.reload();
       });
