@@ -1,6 +1,6 @@
-import EmberUploaderFileField from 'ember-uploader/file-field';
+import EmberUploader from 'ember-uploader';
 
-var ImageUploader = EmberUploaderFileField.extend({
+var ImageUploader = EmberUploader.FileField.extend({
   multiple: true,
   accept: 'image/*',
 
