@@ -13,17 +13,17 @@
     "loader.js": "ember-cli/loader.js#3.2.0",
     "qunit": "~1.17.1",
     "ember-simple-auth": "0.7.3",
-    "bootstrap-sass": "~3.3.3",
+    "bootstrap-sass": "~3.3.5",
     "font-awesome": "~4.3.0",
-    "ember-cli-moment-shim": "~0.0.3",
+    "ember-cli-moment-shim": "~0.1.0",
     "ember-uploader": "0.3.0",
-    "spin.js": "~2.0.2",
+    "spin.js": "~2.3.1",
     "ember-cli-codemirror-shim": "~0.0.1",
     "codemirror": "~4.8.0",
     "pretender": "0.1.0",
-    "moment": "~2.9.0",
-    "eonasdan-bootstrap-datetimepicker": "~4.0.0",
-    "twix": "~0.6.2",
+    "moment": "~2.10.3",
+    "eonasdan-bootstrap-datetimepicker": "~4.14.30",
+    "twix": "~0.6.4",
     "tinymce": "~4.1.7"
   }
 }
