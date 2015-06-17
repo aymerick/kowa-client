@@ -20,7 +20,7 @@
     "spin.js": "~2.3.1",
     "ember-cli-codemirror-shim": "~0.0.1",
     "codemirror": "~4.8.0",
-    "pretender": "0.1.0",
+    "pretender": "0.6.0",
     "moment": "~2.10.3",
     "eonasdan-bootstrap-datetimepicker": "~4.14.30",
     "twix": "~0.6.4",
