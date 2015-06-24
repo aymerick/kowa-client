@@ -62,7 +62,7 @@ moduleFor('route:sites', {
         "googlePlus": "",
         "pageSettings": [],
         "theme": "willy",
-        "baseUrl": "http://127.0.0.1/site_1",
+        "customUrl": "http://127.0.0.1/site_1",
         "uglyUrl": false,
         "links": {
           "activities": "/api/sites/site_1/activities",

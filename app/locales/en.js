@@ -44,8 +44,8 @@ export default {
   newSite: 'New site',
   setup: {
     createSite: 'Create site',
-    id: 'Site id',
-    idInfos: 'This identifier will appear in your website address'
+    url: 'Site URL',
+    urlInfos: 'Choose the URL of your website.'
   },
 
   // common edition
@@ -205,13 +205,15 @@ export default {
   // general settings
   General: 'General',
   site: {
-    baseUrl: 'Base URL',
-    baseUrlInfos: 'Where your website is located',
+    customUrl: 'Custom URL',
+    customUrlInfos: 'The custom URL for your website',
     'delete': 'Delete this site',
     deleteInfos: 'Once you delete a site, there is no going back. Please be certain.',
     deleteQuestion: "Are you sure you want to delete your site?",
     deleteWarning: "Attention ! All your site contents will be deleted, and there is no going back.",
     displayNameInNavBar: 'Display name in navigation bar',
+    domain: 'URL',
+    domainInfos: 'Choose the URL for your website',
     favicon: 'Site Favicon',
     faviconInfos: 'A 16x16 pixels icon that will be displayed in your website visitors browser',
     googleAnalytics: 'Google Analytics ID',

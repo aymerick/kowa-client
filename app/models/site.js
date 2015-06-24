@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 var Site = DS.Model.extend({
   createdAt: DS.attr('date'),
@@ -38,11 +39,21 @@ var Site = DS.Model.extend({
 
   // settings
   theme: DS.attr(),
-  baseUrl: DS.attr(),
+  domain: DS.attr(),
+  customUrl: DS.attr(),
   uglyUrl: DS.attr('boolean'),
 
   // theme settings
-  nameInNavBar: DS.attr('boolean')
+  nameInNavBar: DS.attr('boolean'),
+
+  baseUrl: function() {
+    var url = this.get('customUrl');
+    if (!Ember.isBlank(url)) {
+      return url;
+    }
+
+    return 'http://' + this.get('id') + '.' + this.get('domain');
+  }.property('domain', 'customUrl'),
 });
 
 export default Site;

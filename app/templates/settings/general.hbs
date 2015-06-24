@@ -64,12 +64,26 @@
     </div>
 
     <div class="form-group">
-        <label for="site-base-url">{{t 'site.baseUrl'}}</label>
-        {{input id="site-base-url" name="general[baseUrl]" type="text" class="form-control" value=model.baseUrl}}
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="site-domain">{{t 'site.domain'}}</label>
+                http://{{model.id}}.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
+                <p class="info">
+                    {{t 'site.domainInfos'}}
+                </p>
+            </div>
+        </form>
+    </div>
+
+    {{#if model.customUrl}}
+    <div class="form-group">
+        <label for="site-custom-url">{{t 'site.customUrl'}}</label>
+        {{input id="site-custom-url" name="general[customUrl]" type="text" class="form-control" value=model.customUrl}}
         <p class="info">
-            {{t 'site.baseUrlInfos'}}
+            {{t 'site.customUrlInfos'}}
         </p>
     </div>
+    {{/if}}
 
     <div class="form-group">
         <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>

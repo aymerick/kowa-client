@@ -44,9 +44,9 @@ export default {
   newSite: 'Nouveau site',
   setup: {
     createSite: 'Créer le site',
-    id: 'Identifiant pour votre site',
-    idInfos: "Cet identifiant apparaitra dans l'adresse de votre site"
-  },
+    url: 'Adresse',
+    urlInfos: "Sélectionnez l'adresse de votre site web"
+ },
 
   // common edition
   edition: {
@@ -218,8 +218,8 @@ export default {
   // general settings
   General: 'Général',
   site: {
-    baseUrl: 'URL',
-    baseUrlInfos: "Indiquez l'adresse de votre site web",
+    customUrl: 'Adresse personnalisée',
+    customUrlInfos: "Indiquez l'adresse de votre site web",
     'delete': 'Supprimer le site',
     deleted: 'Site supprimé',
     deleteFailed: "Erreur lors de la suppression du site",
@@ -227,19 +227,21 @@ export default {
     deleteQuestion: "Etes-vous certain de vouloir supprimer votre site ?",
     deleteWarning: "Attention ! Tous les contenus de ce site seront supprimés, et il sera impossible de revenir en arrière.",
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
+    domain: 'Adresse',
+    domainInfos: "Choisissez l'adresse de votre site",
     favicon: 'Favicon',
     faviconInfos: "Une icone de 16x16 pixels qui s'affichera dans le navigateur des visiteurs de votre site web",
     googleAnalytics: 'ID Google Analytics',
     googleAnalyticsInfos: 'Entrez votre identifiant Google Analytics pour activer les statistiques de votre site web',
     lang: 'Langue du site',
     langInfos: "Votre site s'affichera dans cette langue",
-    logo: 'Logo du site',
+    logo: 'Logo',
     logoInfos: 'Un logo à afficher sur le site',
     name: 'Nom du site',
     nameInfos: 'Le nom de votre site',
     tagline: 'Accroche',
     taglineInfos: 'Une phrase qui résume bien votre site',
-    theme: 'Habillage du site',
+    theme: 'Habillage',
     themeInfos: 'Choisissez un habillage graphique pour votre site'
   },
 
