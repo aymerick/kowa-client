@@ -18,12 +18,6 @@ var PostsPostController = Ember.Controller.extend(ContentEditionController, {
     }
   },
 
-  // @todo Get that list from the server
-  allFormats: [
-    { name: "Rich Text", id: 'html' },
-    { name: "Markdown", id: 'md' }
-  ],
-
   i18n: function() {
     return {
       postBody: this.t('post.body'),

@@ -4,11 +4,7 @@ var SettingsGeneralController = Ember.Controller.extend({
   needs: [ 'settings'],
   site: Ember.computed.alias('controllers.settings.model'),
 
-  allLangs: Ember.computed.alias('langService.allLangs'),
   isSaving: false,
-
-  // @todo Get that list from the server
-  allThemes: [ 'ailes', 'willy' ],
 
   actions: {
     removeLogo: function() {

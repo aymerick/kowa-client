@@ -18,12 +18,6 @@ var PagesPageController = Ember.Controller.extend(ContentEditionController, {
     }
   },
 
-  // @todo Get that list from the server
-  allFormats: [
-    { name: "Rich Text", id: 'html' },
-    { name: "Markdown", id: 'md' }
-  ],
-
   i18n: function() {
     return {
       pageBody: this.t('page.body'),

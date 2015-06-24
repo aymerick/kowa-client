@@ -39,7 +39,7 @@
 
             {{#if features.showContentFormat}}
                 <form class="form-inline content-format">
-                    {{view "select" content=allFormats optionValuePath="content.id" optionLabelPath="content.name" value=model.format class="form-control"}}
+                    {{view "select" content=kowa.conf.formats optionValuePath="content.id" optionLabelPath="content.name" value=model.format class="form-control"}}
                 </form>
             {{/if}}
         </div>

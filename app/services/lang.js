@@ -1,20 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  // @todo Get that list from the server. First lang is default one.
-  allLangs: Ember.A([{
-    id: 'en',
-    name: 'English',
-  }, {
-    id: 'fr',
-    name: 'Français',
-  }]),
-
   userLang: null,
 
   browserLang: function() {
-    var allLangs = this.get('allLangs');
-    var defaultLang = allLangs.get('firstObject')['id'];
+    var langs = this.get('kowa.conf.langs');
+
+    if (langs === undefined) {
+      return 'en';
+    }
+
+    var defaultLang = langs.get('firstObject')['id'];
 
     var result = defaultLang;
 
@@ -23,13 +19,13 @@ export default Ember.Service.extend({
       // handles both 'fr' and 'fr-FR' formats
       navLang = navLang.split('-')[0];
 
-      if (!Ember.isNone(allLangs.findBy('id', navLang))) {
+      if (!Ember.isNone(langs.findBy('id', navLang))) {
         result = navLang;
       }
     }
 
     return result;
-  }.property(),
+  }.property('kowa.conf.langs'),
 
   currentLang: function() {
     var result = this.get('userLang');

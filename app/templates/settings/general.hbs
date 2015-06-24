@@ -57,7 +57,7 @@
 
     <div class="form-group">
         <label for="site-theme">{{t 'site.theme'}}</label>
-        {{view "select" id="site-theme" content=allThemes selection=model.theme class="form-control"}}
+        {{view "select" id="site-theme" content=kowa.conf.themes selection=model.theme class="form-control"}}
         <p class="info">
             {{t 'site.themeInfos'}}
         </p>
@@ -81,7 +81,7 @@
 
     <div class="form-group">
         <label for="site-lang">{{t 'site.lang'}}</label>
-        {{view "select" id="site-lang" content=allLangs optionValuePath="content.id" optionLabelPath="content.name" value=model.lang class="form-control"}}
+        {{view "select" id="site-lang" content=kowa.conf.langs optionValuePath="content.id" optionLabelPath="content.name" value=model.lang class="form-control"}}
         <p class="info">
             {{t 'site.langInfos'}}
         </p>
