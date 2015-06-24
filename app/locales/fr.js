@@ -44,7 +44,7 @@ export default {
   newSite: 'Nouveau site',
   setup: {
     createSite: 'Créer le site',
-    id: 'Identifiant de vote site',
+    id: 'Identifiant pour votre site',
     idInfos: "Cet identifiant apparaitra dans l'adresse de votre site"
   },
 
