@@ -3,8 +3,6 @@ import ajax from 'ic-ajax';
 
 export default Ember.Service.extend({
   conf: Ember.computed(function () {
-    var self = this;
-
     var confPromise = ajax('/api/configuration').then(function(response) {
       return response;
     });
