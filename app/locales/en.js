@@ -45,6 +45,7 @@ export default {
   setup: {
     createSite: 'Create site',
     url: 'Site URL',
+    urlAccessible: 'Your website will be accessible at that URL:',
     urlInfos: 'Choose the URL of your website.'
   },
 
@@ -213,7 +214,7 @@ export default {
     deleteWarning: "Attention ! All your site contents will be deleted, and there is no going back.",
     displayNameInNavBar: 'Display name in navigation bar',
     domain: 'URL',
-    domainInfos: 'Choose the URL for your website',
+    domainInfos: 'Your website is accessible at that URL',
     favicon: 'Site Favicon',
     faviconInfos: 'A 16x16 pixels icon that will be displayed in your website visitors browser',
     googleAnalytics: 'Google Analytics ID',

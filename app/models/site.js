@@ -53,7 +53,7 @@ var Site = DS.Model.extend({
     }
 
     return 'http://' + this.get('id') + '.' + this.get('domain');
-  }.property('domain', 'customUrl'),
+  }.property('domain', 'customUrl', 'id'),
 });
 
 export default Site;

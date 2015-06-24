@@ -35,12 +35,12 @@
             </p>
         </div>
         <div class="form-group {{if errors.id 'has-error'}}">
+            <label class="control-label" for="site-domain">{{t 'setup.url'}}</label>
             <form class="form-inline">
                 <div class="form-group">
-                     <label class="control-label" for="site-domain">{{t 'setup.url'}}</label>
                     {{input id="site-id" type="text" class="form-control" value=model.id}}&nbsp;.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
                     <p class="info">
-                        {{t 'setup.urlInfos'}}
+                        {{#if model.id}}{{t 'setup.urlAccessible'}} {{model.baseUrl}}{{else}}{{t 'setup.urlInfos'}}{{/if}}
                     </p>
                 </div>
             </form>

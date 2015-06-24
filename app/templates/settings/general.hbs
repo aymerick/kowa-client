@@ -69,7 +69,7 @@
                 <label for="site-domain">{{t 'site.domain'}}</label>
                 http://{{model.id}}.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
                 <p class="info">
-                    {{t 'site.domainInfos'}}
+                    {{t 'site.domainInfos'}} - {{model.baseUrl}}
                 </p>
             </div>
         </form>

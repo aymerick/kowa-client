@@ -45,7 +45,8 @@ export default {
   setup: {
     createSite: 'Créer le site',
     url: 'Adresse',
-    urlInfos: "Sélectionnez l'adresse de votre site web"
+    urlAccessible: "Votre site web sera accessible à cette adresse:",
+    urlInfos: "Choisissez l'adresse de votre site web."
  },
 
   // common edition
@@ -228,7 +229,7 @@ export default {
     deleteWarning: "Attention ! Tous les contenus de ce site seront supprimés, et il sera impossible de revenir en arrière.",
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
     domain: 'Adresse',
-    domainInfos: "Choisissez l'adresse de votre site",
+    domainInfos: "Votre site web est accessible à cette adresse",
     favicon: 'Favicon',
     faviconInfos: "Une icone de 16x16 pixels qui s'affichera dans le navigateur des visiteurs de votre site web",
     googleAnalytics: 'ID Google Analytics',
