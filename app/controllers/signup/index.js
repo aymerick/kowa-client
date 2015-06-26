@@ -47,6 +47,8 @@ var SignupController = Ember.Controller.extend({
     signup: function() {
       var data = this.getProperties('email', 'username', 'password');
 
+      data['lang'] = this.get('langService.currentLang';)
+
       var self = this;
 
       return Ember.$.ajax({
