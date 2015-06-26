@@ -17,6 +17,9 @@ var app = new EmberApp({
         'bootstrap': '/assets/bootstrap.css'
       }
     }
+  },
+  fingerprint: {
+    exclude: ['tinymce', 'favicon.png'],
   }
 });
 
