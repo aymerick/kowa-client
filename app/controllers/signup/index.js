@@ -48,6 +48,7 @@ var SignupController = Ember.Controller.extend({
       var data = this.getProperties('email', 'username', 'password');
 
       data['lang'] = this.get('langService.currentLang');
+      data['tz'] = "Europe/Paris"; // @todo Detect user timezone
 
       var self = this;
 
