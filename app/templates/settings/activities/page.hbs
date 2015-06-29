@@ -7,7 +7,7 @@
 
 <form class="settings-body" role="form" {{action 'save' on='submit'}}>
     <div class="form-group">
-        {{input type="checkbox" checked=disabled}} {{t 'pageSettings.disabled'}}
+        {{input type="checkbox" checked=model.disabled}} {{t 'pageSettings.disabled'}}
         <p class="info">
             {{t 'activity.pageDisabledInfos'}}
         </p>
