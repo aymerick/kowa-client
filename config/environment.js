@@ -16,7 +16,7 @@ module.exports = function(environment) {
     // thanks to ember-feature-flags addon
     featureFlags: {
       'show-content-format': false,
-      'show-page-settings': false
+      'show-page-settings': true
     },
 
     APP: {
