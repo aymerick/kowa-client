@@ -44,6 +44,7 @@ export default {
   newSite: 'New site',
   setup: {
     createSite: 'Create site',
+    title: 'Create a new website',
     url: 'Site URL',
     urlAccessible: 'Your website will be accessible at that URL:',
     urlInfos: 'Choose the URL of your website.'

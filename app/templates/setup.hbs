@@ -1,7 +1,5 @@
 <div class="container setup-box">
-    <div class="setup-logo">
-        <img src="/images/ninja_150x150.png" alt="Kowa Logo" class="img-responsive" />
-    </div>
+    <h1>{{t 'setup.title'}}</h1>
 
     <form class="setup-form" role="form" {{action 'createSite' on='submit'}}>
         {{#if haveError}}

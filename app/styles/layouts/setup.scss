@@ -5,14 +5,11 @@
 $setup-box-width: 600px;
 $setup-box-padding: 15px;
 
-$logo-head-width: 124px;
-$logo-margin: ($setup-box-width - (2 * $setup-box-padding) - $logo-head-width) / 2;
-
 .setup-box {
     max-width: $setup-box-width;
     padding: 15px;
 
-    img {
-        margin-left: $logo-margin;
+    h1 {
+        margin-bottom: 1em;
     }
 }
