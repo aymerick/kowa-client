@@ -27,7 +27,10 @@ var PostsPostController = Ember.Controller.extend(ContentEditionController, {
 
   actions: {
     publishPost: function() {
-      this.get('model').set('published', true);
+      var model = this.get('model');
+
+      model.set('published', true);
+      model.set('publishedAt', new Date());
 
       this.commitEdition(this.t('post.published'), this.t('post.publishFailed'));
     },
