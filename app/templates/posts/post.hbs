@@ -17,12 +17,12 @@
             {{#if model.published}}
                 <form class="form-horizontal">
                   <div class="form-group">
+                    <div class="col-sm-3">
+                        <button {{action "unpublishPost"}} class="btn btn-danger content-action-button action-unpublish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-down"></i> {{t 'post.unpublish'}}</button>
+                    </div>
                     <div class="col-sm-6">
                         <!-- @todo Fix locale -->
                         {{bs-datetimepicker id="post-publishedAt" date=model.publishedAt format='DD-MM-YYYY HH:mm' forceDateOutput=true locale='fr'}}
-                    </div>
-                    <div class="col-sm-4">
-                        <button {{action "unpublishPost"}} class="btn btn-danger content-action-button action-unpublish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-down"></i> {{t 'post.unpublish'}}</button>
                     </div>
                   </div>
                 </form>
