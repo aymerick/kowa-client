@@ -53,7 +53,7 @@ var TinyMCEEditor = Ember.Component.extend({
       resize: false,
       toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link | hr',
       // @todo i18n
-      // language_url: "/tinymce/locales/fr_FR.js",
+      language_url: "/tinymce/locales/fr_FR.js",
       setup: Ember.run.bind(this, this.setupEditor)
     };
 
