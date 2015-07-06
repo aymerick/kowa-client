@@ -49,7 +49,7 @@ var bsDateTimePickerComponent = Ember.Component.extend({
 
 
     bsDateTimePicker.on("dp.change", function(ev) {
-      if(Ember.isNone(ev.date)) {
+      if(Ember.isNone(ev.date) || (ev.date === false)) {
         self.set("date", undefined);
       } else if (!ev.date.isSame(self.get('date'))) {
         if(self.forceDateOutput) {
