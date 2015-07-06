@@ -47,9 +47,10 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
   },
 
   commitEdition: function(okMsg, errorMsg) {
+    var model = this.get('model');
+
     if (this.get('editionDefaultTitle') !== null) {
       // set a default title
-      var model = this.get('model');
       if (!model.get('title')) {
           model.set('title', this.t(this.get('editionDefaultTitle')));
       }
@@ -61,7 +62,6 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
     }
 
     // persist on server
-    var model = this.get('model');
     var self = this;
 
     this.set('isSaving', true);
