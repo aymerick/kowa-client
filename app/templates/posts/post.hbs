@@ -22,7 +22,7 @@
                         {{bs-datetimepicker id="post-publishedAt" date=model.publishedAt format='DD-MM-YYYY HH:mm' forceDateOutput=true locale='fr'}}
                     </div>
                     <div class="col-sm-4">
-                        <button {{action "unpublishPost"}} class="btn btn-default content-action-button action-unpublish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-down"></i> {{t 'post.unpublish'}}</button>
+                        <button {{action "unpublishPost"}} class="btn btn-danger content-action-button action-unpublish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-down"></i> {{t 'post.unpublish'}}</button>
                     </div>
                   </div>
                 </form>
