@@ -9,6 +9,7 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
   nothingChanged: Ember.computed.not('isDirty'),
   cannotSave: Ember.computed.or('nothingChanged', 'isSaving'),
   cannotDelete: Ember.computed.or('model.isNew', 'isSaving'),
+  cannotUpdate: Ember.computed.or('model.isNew', 'isSaving'),
 
   watchProperties: Ember.A([ ]),
 
@@ -46,6 +47,14 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
   },
 
   commitEdition: function(okMsg, errorMsg) {
+    if (this.get('editionDefaultTitle') !== null) {
+      // set a default title
+      var model = this.get('model');
+      if (!model.get('title')) {
+          model.set('title', this.t(this.get('editionDefaultTitle')));
+      }
+    }
+
     if (!this.get('isDirty')) {
       // This should never happen
       return;
@@ -169,14 +178,6 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
     },
 
     saveContent: function() {
-      if (this.get('editionDefaultTitle') !== null) {
-        // set a default title
-        var model = this.get('model');
-        if (!model.get('title')) {
-            model.set('title', this.t(this.get('editionDefaultTitle')));
-        }
-      }
-
       // save
       this.commitEdition(this.t(this.get('editionSaveMsgOk')), this.t(this.get('editionSaveMsgErr')));
     }

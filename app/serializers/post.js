@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-var ATTRS = [ 'title', 'body', 'format' ];
+var ATTRS = [ 'title', 'body', 'format', 'published', 'publishedAt' ];
 
 var BELONGS_TO = [ 'site', 'cover' ];
 
@@ -15,6 +15,10 @@ var PostSerializer = DS.RESTSerializer.extend({
     ATTRS.forEach(function(fieldName) {
       result[fieldName] = snapshot.attr(fieldName);
     });
+
+    if (!result['published']) {
+      delete(result['publishedAt']);
+    }
 
     BELONGS_TO.forEach(function(fieldName) {
       var fieldId = snapshot.belongsTo(fieldName, { id: true });

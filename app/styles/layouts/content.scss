@@ -108,6 +108,10 @@ $item-padding: ($item-height - $cover-size) / 2;
                 bottom: 0px;
 
                 padding: $item-padding;
+
+                .draft {
+                    color: red;
+                }
             }
 
             .item-title {
@@ -115,7 +119,7 @@ $item-padding: ($item-height - $cover-size) / 2;
                 line-height: 1.25em;
                 font-weight: normal;
 
-                margin: 0 0 0.3em 0;
+                margin: 0 0 0.5em 0;
 
                 overflow: hidden;
                 text-overflow: ellipsis;

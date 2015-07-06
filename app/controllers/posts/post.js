@@ -23,7 +23,21 @@ var PostsPostController = Ember.Controller.extend(ContentEditionController, {
       postBody: this.t('post.body'),
       postTitle: this.t('post.title')
     };
-  }.property('langService.currentLang')
+  }.property('langService.currentLang'),
+
+  actions: {
+    publishPost: function() {
+      this.get('model').set('published', true);
+
+      this.commitEdition(this.t('post.published'), this.t('post.publishFailed'));
+    },
+
+    unpublishPost: function() {
+      this.get('model').set('published', false);
+
+      this.commitEdition(this.t('post.unpublished'), this.t('post.unpublishFailed'));
+    }
+  }
 });
 
 export default PostsPostController;

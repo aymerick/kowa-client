@@ -183,11 +183,11 @@ export default {
   // posts
   Posts: 'Posts',
   post: {
-    added: 'Added:',
     body: 'Post body',
     deleteQuestion: "Are you sure you want to delete this post?",
     deleted: 'Post deleted',
     deleteFailed: 'Failed to delete post',
+    draft: 'Draft',
     edit: 'Edit this post',
     'new': 'New post',
     none: 'No post yet.',
@@ -195,9 +195,16 @@ export default {
     pageDisabledInfos: "If you check that option then the posts pages won't be displayed",
     pageTaglineInfos: "The tagline to display on the posts page",
     pageTitleInfos: "This title will be displayed instead of 'Posts'",
+    publish: 'Publish',
+    publishedStatus: 'Published:',
+    published: 'Post published',
+    publishFailed: 'Failed to publish post',
     saved: 'Post saved',
     saveFailed: 'Failed to save post',
     title: 'Post title',
+    unpublish: 'Unpublish',
+    unpublished: 'Post unpublished',
+    unpublishFailed: 'Failed to unpublish post',
     untitled: '(Untitled)'
   },
 

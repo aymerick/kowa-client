@@ -14,6 +14,22 @@
         <div class="content-fields">
             {{autofocus-input class="content-title" name="post[title]" type="text" placeholder=i18n.postTitle value=model.title}}
 
+            {{#if model.published}}
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-3">
+                        <!-- @todo Fix locale -->
+                        {{bs-datetimepicker id="post-publishedAt" date=model.publishedAt format='DD-MM-YYYY HH:mm' forceDateOutput=true locale='fr'}}
+                    </div>
+                    <div class="col-sm-3">
+                        <button {{action "unpublishPost"}} class="btn btn-default content-action-button action-unpublish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-down"></i> {{t 'post.unpublish'}}</button>
+                    </div>
+                  </div>
+                </form>
+            {{else}}
+                <button {{action "publishPost"}} class="btn btn-success content-action-button action-publish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-up"></i> {{t 'post.publish'}}</button>
+            {{/if}}
+
             {{#if features.showContentFormat}}
                 <form class="form-inline content-format">
                     {{view "select" content=kowa.conf.formats optionValuePath="content.id" optionLabelPath="content.name" value=model.format class="form-control"}}

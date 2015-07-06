@@ -14,7 +14,11 @@
                 <div class="item-infos">
                     <h3 class="item-title">{{item.title}}</h3>
                     <section class="item-meta">
-                        {{t 'post.added'}} {{ago item.createdAt}}
+                        {{#if item.published}}
+                            {{t 'post.publishedStatus'}} {{ago item.publishedAt}}
+                        {{else}}
+                            <span class="draft">{{t 'post.draft'}}</span>
+                        {{/if}}
                     </section>
                 </div>
             {{/link-to}}

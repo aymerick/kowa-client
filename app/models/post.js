@@ -5,6 +5,7 @@ var Post = DS.Model.extend({
   createdAt: DS.attr('date', { defaultValue: function() { return new Date(); } }),
   updatedAt: DS.attr('date', { defaultValue: function() { return new Date(); } }),
 
+  published: DS.attr('boolean', { defaultValue: false }),
   publishedAt: DS.attr('date'),
   title: DS.attr('string', { defaultValue: "" }),
   body: DS.attr('string', { defaultValue: "" }),

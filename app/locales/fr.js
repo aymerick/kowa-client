@@ -183,11 +183,11 @@ export default {
   // posts
   Posts: 'Actualités',
   post: {
-    added: 'Ajoutée:',
     body: 'Texte...',
     deleteQuestion: "Etes-vous certain de vouloir supprimer cette actualité ?",
     deleted: 'Actualité supprimée',
     deleteFailed: "Erreur lors de la suppression de l'actualité",
+    draft: 'Ébauche',
     edit: 'Modifier cette actualité',
     'new': 'Nouvelle actualité',
     none: "Vous n'avez créé aucune actualité pour le moment.",
@@ -195,9 +195,16 @@ export default {
     pageDisabledInfos: "Si vous cochez cette case, les actualités n'apparaitront plus sur votre site",
     pageTaglineInfos: "Cette accroche sera affichée sur la page des actualités",
     pageTitleInfos: "Ce titre sera affiché à la place de 'Actualités'",
+    publish: 'Publier',
+    publishedStatus: 'Publié:',
+    published: 'Actualité publiée',
+    publishFailed: "Erreur lors de la publication de l'actualité",
     saved: 'Actualité sauvegardée',
     saveFailed: "Erreur lors de la sauvegarde de l'actualité",
     title: 'Titre',
+    unpublish: 'Cacher',
+    unpublished: 'Actualité dépubliée',
+    unpublishFailed: "Erreur lors de la dépublication de l'actualité",
     untitled: '(Sans titre)'
   },
 
