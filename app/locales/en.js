@@ -34,7 +34,7 @@ export default {
     signupFailed: "There was an error with your account validation.",
     signupFailedContactUs: "This is embarassing, we can't send you a new validation email. Please contact us to solve that issue:",
     signupFailedRetry: "Please click on the button below to receive a new validation email.",
-    signupMailResent: "A new mail has been sent.",
+    signupMailResent: "A new email has been sent.",
     signupThanks: "Thanks For Signing Up!",
     username: "Username",
     usernameOrEmail: "Username or Email address"
