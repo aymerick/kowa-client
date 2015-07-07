@@ -11,13 +11,13 @@ export default {
   save: 'Sauvegarder',
   select: 'Selectionner',
   selectCover: 'Choisir Image',
-  sendEmailAgain: 'Renvoyer le mail',
+  sendEmailAgain: "Renvoyer l'email",
   toogleNavigation: 'Menu',
   visitSite: 'Voir le site',
 
   // auth pages
   auth: {
-    alreadyHaveAccount: "You avez déjà créé un compte ?",
+    alreadyHaveAccount: "Vous avez déjà créé un compte ?",
     createAccount: "Créer un compte",
     email: "Email",
     enterEmail: "Votre email",
@@ -29,15 +29,15 @@ export default {
     noAccountYet: "Vous n'avez pas de compte ?",
     password: "Mot de passe",
     signup: "Créer le compte",
-    signupCheckMail: "Veuillez vérifier vos mails et cliquer sur <strong>Activer le compte</strong> dans le message que nous venons d'envoyer à cette addresse:",
-    signupCheckMailAgain: "Veuillez vérifier vos mails et cliquer sur <strong>Activer le compte</strong> dans le nouveau message que nous venons de vous envoyer.",
+    signupCheckMail: "Veuillez vérifier vos emails et cliquer sur <strong>Activer le compte</strong> dans le message que nous venons d'envoyer à cette addresse:",
+    signupCheckMailAgain: "Veuillez vérifier vos emails et cliquer sur <strong>Activer le compte</strong> dans le nouveau message que nous venons de vous envoyer.",
     signupFailed: "Une erreur s'est produite lors de la validation de votre compte.",
     signupFailedContactUs: "Voilà qui est embarassant, nous n'arrivons pas à vous envoyer un nouvel email de validation. Veuillez nous contacter pour résoudre ce problème:",
     signupFailedRetry: "Veuillez cliquer sur le bouton ci-dessous pour recevoir un nouvel email de validation.",
     signupMailResent: "Un nouvel email a été envoyé.",
     signupThanks: "Merci d'avoir créé un compte !",
     username: "Identifiant",
-    usernameOrEmail: "Identifiant ou addresse mail"
+    usernameOrEmail: "Identifiant ou addresse email"
   },
 
   // site setup
