@@ -97,7 +97,7 @@
 
         .settings-item-cover {
             position: absolute;
-            left: $settings-item-spacing;
+            left: $settings-item-handle-width + $settings-item-spacing;
             top: $settings-item-spacing;
 
             width: $img-thumb-thumbnail-width;
@@ -110,7 +110,7 @@
 
         .settings-item-fields {
             position: absolute;
-            left: $img-thumb-thumbnail-width + ($settings-item-spacing * 2);
+            left: $settings-item-handle-width + $img-thumb-thumbnail-width + ($settings-item-spacing * 2);
             right: 200px;
             margin-top: 15px;
 

@@ -7,6 +7,7 @@ var Member = DS.Model.extend({
   fullname: DS.attr('string', { defaultValue: "" }),
   role: DS.attr('string', { defaultValue: "" }),
   description: DS.attr('string', { defaultValue: "" }),
+  order: DS.attr('number', { defaultValue: 0 }),
 
   photo: DS.belongsTo('image', { inverse: 'photoMembers', async: true }),
 

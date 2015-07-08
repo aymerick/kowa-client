@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-var ATTRS = [ 'fullname', 'role', 'description' ];
+var ATTRS = [ 'fullname', 'role', 'description', 'order' ];
 
 var BELONGS_TO = [ 'site', 'photo' ];
 

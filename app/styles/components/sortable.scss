@@ -1,0 +1,30 @@
+//
+// Sortable list
+//
+
+.sortable-item {
+  position: relative;
+  transition: all .125s;
+}
+
+.sortable-item.is-dragging {
+  transition-duration: 0s;
+  z-index: 10;
+}
+
+.sortable-item.is-dropping {
+  z-index: 10;
+}
+
+.sortable-item .handle {
+  position: absolute;
+  padding: 0 .5em;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: $midgrey;
+  cursor: move;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
