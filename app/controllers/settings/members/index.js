@@ -10,7 +10,7 @@ var SettingsMembersController = Ember.ArrayController.extend({
       newOrder.forEach(function(member){
         member.set('order', order);
         // @todo Remove that individual save
-        member.save()
+        member.save();
         order++;
       });
 
