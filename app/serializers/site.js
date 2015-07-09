@@ -7,7 +7,7 @@ var ATTRS = [
   'theme', 'domain', 'customUrl', 'uglyUrl', 'nameInNavBar', 'lang'
 ];
 
-var BELONGS_TO = [ 'logo', 'cover', 'favicon' ];
+var BELONGS_TO = [ 'logo', 'cover', 'favicon', 'membership' ];
 
 var SiteSerializer = DS.RESTSerializer.extend({
   serialize: function(snapshot, options) {

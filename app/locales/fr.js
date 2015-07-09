@@ -246,6 +246,8 @@ export default {
     langInfos: "Votre site s'affichera dans cette langue",
     logo: 'Logo',
     logoInfos: 'Un logo à afficher sur le site',
+    membership: "Bulletin d'adhésion",
+    membershipInfos: "Le bulletin d'adhésion au format PDF",
     name: 'Nom du site',
     nameInfos: 'Le nom de votre site',
     tagline: 'Accroche',
@@ -274,5 +276,14 @@ export default {
     deleteFailed: "Erreur lors de la suppression de l'image",
     gotoSettings: "Allez dans la section Images des paramètres pour ajouter des images.",
     none: "Vous n'avez aucune image pour le moment."
+  },
+
+  // files settings
+  file: {
+    added: 'Ajouté:',
+    deleteQuestion: "Etes-vous certain de vouloir supprimer ce fichier ?",
+    deleted: 'Fichier supprimé',
+    deleteFailed: "Erreur lors de la suppression du fichier",
+    saved: 'Fichier sauvegardé'
   }
 };

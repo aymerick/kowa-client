@@ -28,6 +28,8 @@ var Site = DS.Model.extend({
   cover: DS.belongsTo('image', { inverse: 'coverSites', async: true }),
   favicon: DS.belongsTo('image', { inverse: 'faviconSites', async: true }),
 
+  membership: DS.belongsTo('file', { inverse: 'membershipSites', async: true }),
+
   user: DS.belongsTo('user', { async: true }),
 
   posts: DS.hasMany('post', { async: true }),
@@ -35,6 +37,7 @@ var Site = DS.Model.extend({
   pages: DS.hasMany('page', { async: true }),
   activities: DS.hasMany('activity', { async: true }),
   images: DS.hasMany('image', { inverse: 'site', async: true }),
+  files: DS.hasMany('file', { inverse: 'site', async: true }),
 
   pageSettings: DS.hasMany('site-page-setting'),
 

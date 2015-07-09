@@ -177,4 +177,15 @@ form.settings-body {
     .select-image {
         position: relative;
     }
+
+    .membership {
+        .delete-file {
+            margin-left: 10px;
+        }
+
+        .added {
+            font-size: 0.9em;
+            font-style: italic;
+        }
+    }
 }

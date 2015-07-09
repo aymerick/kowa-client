@@ -231,6 +231,8 @@ export default {
     langInfos: 'Your site will be displayed with this language',
     logo: 'Site Logo',
     logoInfos: 'Display a logo for your site',
+    membership: 'Membership File',
+    membershipInfos: 'A PDF file your user needs to fill to become a member',
     name: 'Site Name',
     nameInfos: 'The name of your site',
     tagline: 'Site Tagline',
@@ -272,5 +274,14 @@ export default {
     deleteFailed: 'Failed to delete image',
     gotoSettings: 'Go to Images Settings first and upload some images.',
     none: 'You have no image yet.'
+  },
+
+  // files settings
+  file: {
+    added: 'Added:',
+    deleteQuestion: "Are you sure you want to delete this file?",
+    deleted: 'File deleted',
+    deleteFailed: 'Failed to delete file',
+    saved: 'File saved'
   }
 };

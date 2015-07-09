@@ -1,0 +1,7 @@
+{{#modal-dialog title=i18n.deleteQuestion ok='delete' okText=i18n.delete okClass='btn-danger' close='closeModal' closeText=i18n.cancel}}
+    <p>
+        <i class="fa fa-file-pdf-o"></i>
+        <a href={{model.url}} target="_blank">{{model.name}}</a>
+        <div>{{t 'file.added'}} {{ago model.createdAt}}</div>
+    </p>
+{{/modal-dialog}}

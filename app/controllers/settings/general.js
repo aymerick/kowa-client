@@ -1,8 +1,13 @@
 import Ember from 'ember';
+import UploadJob from 'kowa/services/upload-job';
 
 var SettingsGeneralController = Ember.Controller.extend({
   needs: [ 'settings'],
   site: Ember.computed.alias('controllers.settings.model'),
+
+  membershipUploadUrl: function() {
+    return "/api/files/upload?kind=membership&site=" + this.get('site').get('id');
+  }.property('site'),
 
   isSaving: false,
 
@@ -35,6 +40,32 @@ var SettingsGeneralController = Ember.Controller.extend({
       }).finally(function(){
         self.set('isSaving', false);
       });
+    },
+
+    uploadMembership: function(file) {
+      var job = new UploadJob({
+        url: this.get('membershipUploadUrl'),
+        file: file
+      });
+
+      var self = this;
+
+      job.on('uploadProgress', function(/* val */) {
+        // @todo uploadProgress
+      });
+
+      job.on('didUpload', function(response) {
+        // push uploaded file
+        var recordData = self.store.normalize('file', response.file);
+        var fileRecord = self.store.push('file', recordData);
+
+        // update site
+        self.get('site').set('membership', fileRecord);
+
+        Ember.get(self, 'flashMessages').success(self.t('file.saved'));
+      });
+
+      this.uploader.schedule(job);
     }
   }
 });

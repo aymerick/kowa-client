@@ -86,6 +86,25 @@
     {{/if}}
 
     <div class="form-group">
+        <label for="site-membership">{{t 'site.membership'}}</label>
+        {{#if model.membership}}
+            <div class="membership" id="site-membership">
+                <i class="fa fa-file-pdf-o"></i>
+                <a href={{model.membership.url}} target="_blank">{{model.membership.name}}</a> <button {{action "openModal" "delete-file-field" controller "membership"}} class="btn btn-danger btn-xs delete-file">{{t 'delete'}}</button>
+                <div class="added">{{t 'file.added'}} {{ago model.membership.createdAt}}</div>
+            </div>
+        {{else}}
+            <p class="membership-upload">
+                {{file-uploader upload='uploadMembership' id="site-membership"}}
+            </p>
+        {{/if}}
+
+        <p class="info">
+            {{t 'site.membershipInfos'}}
+        </p>
+    </div>
+
+    <div class="form-group">
         <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
         {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=model.googleAnalytics}}
         <p class="info">
