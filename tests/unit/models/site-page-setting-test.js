@@ -5,7 +5,7 @@ import {
 
 moduleForModel('site-page-setting', 'SitePageSetting', {
   // Specify the other units that are required for this test.
-  needs: [ 'model:image', 'model:user', 'model:post', 'model:page', 'model:activity', 'model:site', 'model:event', 'model:member' ]
+  needs: [ 'model:image', 'model:user', 'model:post', 'model:page', 'model:activity', 'model:site', 'model:event', 'model:member', 'model:file' ]
 });
 
 test('it exists', function(assert) {

@@ -27,7 +27,7 @@ var DeleteFileFieldModal = Ember.Controller.extend({
 
         masterModel.save().then(function() {
           Ember.get(self, 'flashMessages').success(self.t('file.deleted'));
-        })
+        });
       }).catch(function () {
         Ember.get(self, 'flashMessages').danger(self.t('file.deleteFailed'));
         model.rollback();
