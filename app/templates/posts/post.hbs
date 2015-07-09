@@ -19,7 +19,7 @@
 
                 <div class="dtpicker">
                     <!-- @todo Fix locale -->
-                    {{bs-datetimepicker id="post-publishedAt" date=model.publishedAt format='DD-MM-YYYY HH:mm' forceDateOutput=true locale='fr'}}
+                    {{bs-datetimepicker id="post-publishedAt" date=model.publishedAt format='DD-MM-YYYY' forceDateOutput=true locale='fr'}}
                 </div>
             {{else}}
                 <button {{action "publishPost"}} class="btn btn-success content-action-button action-publish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-up"></i> {{t 'post.publish'}}</button>
