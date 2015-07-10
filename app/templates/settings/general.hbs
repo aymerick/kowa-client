@@ -64,26 +64,20 @@
     </div>
 
     <div class="form-group">
-        <form class="form-inline">
-            <div class="form-group">
-                <label for="site-domain">{{t 'site.domain'}}</label>
-                http://{{model.id}}.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
-                <p class="info">
-                    {{t 'site.domainInfos'}} - {{model.baseUrl}}
-                </p>
-            </div>
-        </form>
-    </div>
-
-    {{#if model.customUrl}}
-    <div class="form-group">
-        <label for="site-custom-url">{{t 'site.customUrl'}}</label>
-        {{input id="site-custom-url" name="general[customUrl]" type="text" class="form-control" value=model.customUrl}}
+        <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
+        {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=model.googleAnalytics}}
         <p class="info">
-            {{t 'site.customUrlInfos'}}
+            {{t 'site.googleAnalyticsInfos'}}
         </p>
     </div>
-    {{/if}}
+
+    <div class="form-group">
+        <label for="site-lang">{{t 'site.lang'}}</label>
+        {{view "select" id="site-lang" content=kowa.conf.langs optionValuePath="content.id" optionLabelPath="content.name" value=model.lang class="form-control"}}
+        <p class="info">
+            {{t 'site.langInfos'}}
+        </p>
+    </div>
 
     <div class="form-group">
         <label for="site-membership">{{t 'site.membership'}}</label>
@@ -104,21 +98,32 @@
         </p>
     </div>
 
+    <hr/>
+
     <div class="form-group">
-        <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
-        {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=model.googleAnalytics}}
-        <p class="info">
-            {{t 'site.googleAnalyticsInfos'}}
-        </p>
+        <label for="site-domain">{{t 'site.domain'}}</label>
+        <fieldset disabled={{haveCustomDomain}}>
+            <form class="form-inline">
+                <div class="form-group">
+                    http://{{model.id}}.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
+                </div>
+            </form>
+       </fieldset>
     </div>
 
     <div class="form-group">
-        <label for="site-lang">{{t 'site.lang'}}</label>
-        {{view "select" id="site-lang" content=kowa.conf.langs optionValuePath="content.id" optionLabelPath="content.name" value=model.lang class="form-control"}}
+        <label for="site-custom-domain">{{t 'site.customDomain'}} </label>
+        {{input id="site-custom-domain" name="general[customDomain]" type="text" class="form-control" placeholder=i18n.customDomainPlaceholder value=model.customDomain}}
         <p class="info">
-            {{t 'site.langInfos'}}
+            {{t 'site.customDomainInfos'}}
         </p>
     </div>
+
+    {{#if model.customUrl}}
+        <div class="form-group">
+            TODO: {{model.customUrl}}
+        </div>
+    {{/if}}
 </form>
 
 <hr />

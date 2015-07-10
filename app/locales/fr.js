@@ -227,8 +227,9 @@ export default {
   // general settings
   General: 'Général',
   site: {
-    customUrl: 'Adresse personnalisée',
-    customUrlInfos: "Indiquez l'adresse de votre site web",
+    customDomain: 'Adresse personnalisée',
+    customDomainInfos: "Indiquez un nom de domaine personnalisé pour votre site web",
+    customDomainPlaceholder: 'monsite.fr',
     'delete': 'Supprimer le site',
     deleted: 'Site supprimé',
     deleteFailed: "Erreur lors de la suppression du site",
@@ -237,7 +238,6 @@ export default {
     deleteWarning: "Attention ! Tous les contenus de ce site seront supprimés, et il sera impossible de revenir en arrière.",
     displayNameInNavBar: 'Afficher le nom dans la barre de navigation',
     domain: 'Adresse',
-    domainInfos: "Votre site web est accessible à cette adresse",
     favicon: 'Favicon',
     faviconInfos: "Une icone de 16x16 pixels qui s'affichera dans le navigateur des visiteurs de votre site web",
     googleAnalytics: 'ID Google Analytics',

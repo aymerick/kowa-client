@@ -214,15 +214,15 @@ export default {
   // general settings
   General: 'General',
   site: {
-    customUrl: 'Custom URL',
-    customUrlInfos: 'The custom URL for your website',
+    customDomain: 'Custom domain',
+    customDomainInfos: 'Use a custom domain name for your website',
+    customDomainPlaceholder: 'mywebsite.com',
     'delete': 'Delete this site',
     deleteInfos: 'Once you delete a site, there is no going back. Please be certain.',
     deleteQuestion: "Are you sure you want to delete your site?",
     deleteWarning: "Attention ! All your site contents will be deleted, and there is no going back.",
     displayNameInNavBar: 'Display name in navigation bar',
     domain: 'URL',
-    domainInfos: 'Your website is accessible at that URL',
     favicon: 'Site Favicon',
     faviconInfos: 'A 16x16 pixels icon that will be displayed in your website visitors browser',
     googleAnalytics: 'Google Analytics ID',

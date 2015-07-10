@@ -44,6 +44,7 @@ var Site = DS.Model.extend({
   // settings
   theme: DS.attr(),
   domain: DS.attr(),
+  customDomain: DS.attr(),
   customUrl: DS.attr(),
   uglyUrl: DS.attr('boolean'),
 
@@ -56,8 +57,13 @@ var Site = DS.Model.extend({
       return url;
     }
 
+    var domain = this.get('customDomain');
+    if (!Ember.isBlank(domain)) {
+      return 'http://' + domain;
+    }
+
     return 'http://' + this.get('id') + '.' + this.get('domain');
-  }.property('domain', 'customUrl', 'id'),
+  }.property('domain', 'customUrl', 'id')
 });
 
 export default Site;

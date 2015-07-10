@@ -188,4 +188,8 @@ form.settings-body {
             font-style: italic;
         }
     }
+
+    fieldset:disabled {
+        color: grey;
+    }
 }

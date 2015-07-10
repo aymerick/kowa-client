@@ -11,6 +11,16 @@ var SettingsGeneralController = Ember.Controller.extend({
 
   isSaving: false,
 
+  haveCustomDomain: function() {
+    return !Ember.isBlank(this.get('model.customDomain'));
+  }.property('model.customDomain'),
+
+  i18n: function() {
+    return {
+      customDomainPlaceholder: this.t('site.customDomainPlaceholder'),
+    };
+  }.property('langService.currentLang'),
+
   actions: {
     removeLogo: function() {
       this.get('model').set('logo', null);

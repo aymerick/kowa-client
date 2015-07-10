@@ -4,7 +4,7 @@ var ATTRS = [
   'name', 'tagline', 'description',
   'moreDesc', 'joinText', 'email', 'address',
   'facebook', 'twitter', 'googlePlus', 'googleAnalytics',
-  'theme', 'domain', 'customUrl', 'uglyUrl', 'nameInNavBar', 'lang'
+  'theme', 'domain', 'customDomain', 'uglyUrl', 'nameInNavBar', 'lang'
 ];
 
 var BELONGS_TO = [ 'logo', 'cover', 'favicon', 'membership' ];
