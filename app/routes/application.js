@@ -21,7 +21,7 @@ var ApplicationRoute = Ember.Route.extend(SimpleAuthApplicationRouteMixin, {
     },
 
     sessionAuthenticationFailed: function(/* error */) {
-      this.get('controller').get('flashes').danger('Authentication failed.');
+      this.get('controller').get('flashMessages').danger('Authentication failed.');
     },
 
     openModal: function(name, masterController, arg) {
