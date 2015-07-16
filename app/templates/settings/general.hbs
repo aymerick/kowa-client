@@ -100,28 +100,32 @@
 
     <hr/>
 
-    <div class="form-group">
-        <label for="site-domain">{{t 'site.domain'}}</label>
-        <fieldset disabled={{haveCustomDomain}}>
-            <form class="form-inline">
-                <div class="form-group">
-                    http://{{model.id}}.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
-                </div>
-            </form>
-       </fieldset>
-    </div>
-
-    <div class="form-group">
-        <label for="site-custom-domain">{{t 'site.customDomain'}} </label>
-        {{input id="site-custom-domain" name="general[customDomain]" type="text" class="form-control" placeholder=i18n.customDomainPlaceholder value=model.customDomain}}
-        <p class="info">
-            {{t 'site.customDomainInfos'}}
-        </p>
-    </div>
-
     {{#if model.customUrl}}
         <div class="form-group">
-            TODO: {{model.customUrl}}
+            <label for="site-custom-url">Custom URL</label>
+            {{input id="site-custom-url" name="general[customUrl]" type="text" class="form-control" disabled="1" value=model.customUrl}}
+            <p class="info">
+                This is the custom URL for your site. Only an admin can change that.
+            </p>
+        </div>
+    {{else}}
+        <div class="form-group">
+            <label for="site-domain">{{t 'site.domain'}}</label>
+            <fieldset disabled={{haveCustomDomain}}>
+                <form class="form-inline">
+                    <div class="form-group">
+                        http://{{model.id}}.&nbsp;{{view "select" id="site-domain" class="form-control" content=kowa.conf.domains selection=model.domain}}
+                    </div>
+                </form>
+           </fieldset>
+        </div>
+
+        <div class="form-group">
+            <label for="site-custom-domain">{{t 'site.customDomain'}} </label>
+            {{input id="site-custom-domain" name="general[customDomain]" type="text" class="form-control" placeholder=i18n.customDomainPlaceholder value=model.customDomain}}
+            <p class="info">
+                {{t 'site.customDomainInfos'}}
+            </p>
         </div>
     {{/if}}
 </form>
