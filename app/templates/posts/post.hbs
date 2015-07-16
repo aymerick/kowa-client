@@ -12,7 +12,7 @@
         </div>
 
         <div class="content-fields">
-            {{autofocus-input class="content-title" name="post[title]" type="text" placeholder=i18n.postTitle value=model.title}}
+            {{autofocus-input class="content-title" name="post[title]" type="text" placeholder=(t 'post.title') value=model.title}}
 
             {{#if model.published}}
                 <button {{action "unpublishPost"}} class="btn btn-danger content-action-button action-unpublish" disabled={{cannotUpdate}}><i class="fa fa-thumbs-o-down"></i> {{t 'post.unpublish'}}</button>
@@ -39,9 +39,9 @@
     </header>
     <section class="content-body content-editor">
         {{#if model.isMarkdown}}
-            {{codemirror-editor value=model.body placeholder=i18n.postBody}}
+            {{codemirror-editor value=model.body placeholder=(t 'post.body')}}
         {{else}}
-            {{tinymce-editor value=model.body onChange="bodyChanged" fillHeight=true placeholder=i18n.postBody}}
+            {{tinymce-editor value=model.body onChange="bodyChanged" fillHeight=true placeholder=(t 'post.body')}}
         {{/if}}
     </section>
 </section>

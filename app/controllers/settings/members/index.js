@@ -33,14 +33,7 @@ var SettingsMembersController = Ember.ArrayController.extend({
         Ember.get(self, 'flashMessages').danger('Failed to save members order.');
       });
     }
-  },
-
-  i18n: function() {
-    return {
-      photo: this.t('photo'),
-      memberEdit: this.t('member.edit')
-    };
-  }.property('langService.currentLang')
+  }
 });
 
 export default SettingsMembersController;

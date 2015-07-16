@@ -26,10 +26,12 @@ module.exports = function(environment) {
       // oauth client id/secret (not used for now)
       api_client_id: 'kowa',
       api_client_secret: 'none',
-
-      // ember-cli-i18n addon
-      defaultLocale: 'en'
     }
+  };
+
+  // ember-i18n addon
+  ENV.i18n = {
+    defaultLocale: 'en'
   };
 
   // cf. https://github.com/rwjblue/ember-cli-content-security-policy

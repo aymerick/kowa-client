@@ -12,9 +12,9 @@
         </div>
 
         <div class="content-fields">
-            {{autofocus-input class="content-title" name="event[title]" type="text" placeholder=i18n.eventTitle value=model.title}}
+            {{autofocus-input class="content-title" name="event[title]" type="text" placeholder=(t 'event.title') value=model.title}}
 
-            {{input class="content-place" name="event[place]" type="text" placeholder=i18n.eventPlace value=model.place}}
+            {{input class="content-place" name="event[place]" type="text" placeholder=(t 'event.place') value=model.place}}
 
             <form class="form-horizontal content-dates">
               <div class="form-group">
@@ -51,9 +51,9 @@
     </header>
     <section class="content-body content-editor">
         {{#if model.isMarkdown}}
-            {{codemirror-editor value=model.body placeholder=i18n.eventDescription}}
+            {{codemirror-editor value=model.body placeholder=(t 'event.description')}}
         {{else}}
-            {{tinymce-editor value=model.body onChange="bodyChanged" fillHeight=true placeholder=i18n.eventDescription}}
+            {{tinymce-editor value=model.body onChange="bodyChanged" fillHeight=true placeholder=(t 'event.description')}}
         {{/if}}
     </section>
 </section>

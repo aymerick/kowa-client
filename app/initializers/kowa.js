@@ -6,8 +6,6 @@ export function initialize(container, application) {
   ['controller', 'route', 'view', 'component', 'model'].forEach((factory) => {
     application.inject(factory, 'kowa', 'service:kowa');
   });
-
-  application.inject('service:lang', 'kowa', 'service:kowa');
 }
 
 export default {

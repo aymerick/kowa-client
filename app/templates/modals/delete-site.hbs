@@ -1,4 +1,4 @@
-{{#modal-dialog title=i18n.deleteQuestion ok='delete' okText=i18n.delete okClass='btn-danger' close='closeModal' closeText=i18n.cancel}}
+{{#modal-dialog title=(t 'site.deleteQuestion') ok='delete' okText=(t 'delete') okClass='btn-danger' close='closeModal' closeText=(t 'cancel')}}
     <h2>{{model.name}}</h2>
     {{#if model.tagline}}
         <p>
@@ -12,6 +12,6 @@
     <div class="alert alert-danger" role="alert">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
       <span class="sr-only">Warning:</span>
-      {{i18n.deleteWarning}}
+      {{t 'site.deleteWarning'}}
     </div>
 {{/modal-dialog}}

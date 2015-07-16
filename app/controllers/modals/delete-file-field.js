@@ -26,23 +26,15 @@ var DeleteFileFieldModal = Ember.Controller.extend({
         masterModel.set(masterField, null);
 
         masterModel.save().then(function() {
-          Ember.get(self, 'flashMessages').success(self.t('file.deleted'));
+          Ember.get(self, 'flashMessages').success(self.get('i18n').t('file.deleted'));
         });
       }).catch(function () {
-        Ember.get(self, 'flashMessages').danger(self.t('file.deleteFailed'));
+        Ember.get(self, 'flashMessages').danger(self.get('i18n').t('file.deleteFailed'));
         model.rollback();
         model.reload();
       });
     }
-  },
-
-  i18n: function() {
-    return {
-      deleteQuestion: this.t('file.deleteQuestion'),
-      'delete': this.t('delete'),
-      cancel: this.t('cancel')
-    };
-  }.property('langService.currentLang')
+  }
 });
 
 export default DeleteFileFieldModal;

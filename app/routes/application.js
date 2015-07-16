@@ -2,6 +2,19 @@ import Ember from 'ember';
 import SimpleAuthApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 var ApplicationRoute = Ember.Route.extend(SimpleAuthApplicationRouteMixin, {
+  i18n: Ember.inject.service(),
+
+  afterModel: function() {
+    var self = this;
+
+    // set locale to browser language, if not authenticated yet
+    this.get('kowa.conf').then(function(){
+      if (!self.get('session.isAuthenticated')) {
+        self.set('i18n.locale', self.get('kowa.browserLang'));
+      }
+    });
+  },
+
   actions: {
     sessionAuthenticationFailed: function(/* error */) {
       this.get('controller').get('flashes').danger('Authentication failed.');

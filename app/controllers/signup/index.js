@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 var SignupController = Ember.Controller.extend({
-  lang: Ember.computed.alias('langService.currentLang'),
+  lang: Ember.computed.readOnly('i18n.locale'),
 
   errors: null,
 
@@ -28,14 +28,6 @@ var SignupController = Ember.Controller.extend({
     return this.get('errorMessages').get('firstObject');
   }.property('errorMessages'),
 
-  i18n: function() {
-    return {
-      enterEmail: this.t('auth.enterEmail'),
-      enterUsername: this.t('auth.enterUsername'),
-      enterPassword: this.t('auth.enterPassword')
-    };
-  }.property('langService.currentLang'),
-
   resetFields: function() {
     var self = this;
     ['email', 'username', 'password', 'errors'].forEach(function(fieldName){
@@ -47,7 +39,7 @@ var SignupController = Ember.Controller.extend({
     signup: function() {
       var data = this.getProperties('email', 'username', 'password');
 
-      data['lang'] = this.get('langService.currentLang');
+      data['lang'] = this.get('i18n.locale');
       data['tz'] = "Europe/Paris"; // @todo Detect user timezone
 
       var self = this;

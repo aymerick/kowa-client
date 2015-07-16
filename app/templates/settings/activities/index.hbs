@@ -10,7 +10,7 @@
 <section class="settings-body">
     <div class="settings-list">
         {{#each controller as |activity|}}
-            {{#link-to "settings.activities.activity" activity class="settings-item" title=i18n.activityEdit}}
+            {{#link-to "settings.activities.activity" activity class="settings-item" title='activity.edit'}}
                 <div class="settings-item-cover">
                     {{#if activity.cover}}
                         <img src={{activity.cover.thumbUrl}} alt={{t 'coverImage'}} class="thumbnail" />

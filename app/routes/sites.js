@@ -2,16 +2,18 @@ import Ember from 'ember';
 import AuthenticatedRoute from 'kowa/routes/authenticated';
 
 var SitesRoute = AuthenticatedRoute.extend({
+  i18n: Ember.inject.service(),
+
   model: function() {
     var self = this;
 
-    return this.session.get('currentUser').then(function(currentUser){
+    return this.get('session.currentUser').then(function(currentUser){
       // setup locale
-      self.get('langService').set('userLang', currentUser.get('lang'));
+      self.set('i18n.locale', currentUser.get('lang'));
 
       // observe user locale change
       Ember.addObserver(currentUser, 'lang', function() {
-        self.get('langService').set('userLang', currentUser.get('lang'));
+        self.set('i18n.locale', currentUser.get('lang'));
       });
 
       return currentUser.get('sites');

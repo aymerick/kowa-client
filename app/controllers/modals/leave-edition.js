@@ -30,15 +30,7 @@ var LeaveEditionModal = Ember.Controller.extend({
 
       haltedTransition.retry();
     }
-  },
-
-  i18n: function() {
-    return {
-      leaveQuestion: this.t('edition.leaveQuestion'),
-      leave: this.t('edition.leave'),
-      stay: this.t('edition.stay')
-    };
-  }.property('langService.currentLang')
+  }
 });
 
 export default LeaveEditionModal;

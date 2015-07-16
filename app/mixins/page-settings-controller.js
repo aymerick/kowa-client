@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { translationMacro as t } from "ember-i18n";
 
 var PageSettingsControllerMixin = Ember.Mixin.create({
   needs: ['settings'],
@@ -6,8 +7,8 @@ var PageSettingsControllerMixin = Ember.Mixin.create({
 
   isSaving: false,
 
-  pageSettingsSaveMsgOk: 'pageSettings.saved', // This is a i18n key
-  pageSettingsSaveMsgErr: 'pageSettings.saveFailed', // This is a i18n key
+  pageSettingsSaveMsgOk: t('pageSettings.saved'),
+  pageSettingsSaveMsgErr: t('pageSettings.saveFailed'),
 
   actions: {
     removeCover: function() {
@@ -33,11 +34,11 @@ var PageSettingsControllerMixin = Ember.Mixin.create({
           self.get('site').get('pageSettings').addObject(savedModel);
         }
 
-        Ember.get(self, 'flashMessages').success(self.t(self.get('pageSettingsSaveMsgOk')));
+        Ember.get(self, 'flashMessages').success(self.get('pageSettingsSaveMsgOk'));
 
         return savedModel;
       }).catch(function (/* errors */) {
-        Ember.get(self, 'flashMessages').danger(self.t(self.get('pageSettingsSaveMsgErr')));
+        Ember.get(self, 'flashMessages').danger(self.get('pageSettingsSaveMsgErr'));
       }).finally(function(){
         self.set('isSaving', false);
       });

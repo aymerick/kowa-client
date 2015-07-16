@@ -12,9 +12,9 @@
         </div>
 
         <div class="content-fields">
-            {{autofocus-input class="content-title" type="text" placeholder=i18n.pageTitle value=model.title}}
+            {{autofocus-input class="content-title" type="text" placeholder=(t 'page.title') value=model.title}}
 
-            {{input id='page-tagline' class="form-control content-tagline" type="text" placeholder=i18n.pageTagline value=model.tagline}}
+            {{input id='page-tagline' class="form-control content-tagline" type="text" placeholder=(t 'page.tagline') value=model.tagline}}
 
             <form class="form-inline content-innavbar">
                 <div class="checkbox">
@@ -36,9 +36,9 @@
     </header>
     <section class="content-body content-editor">
         {{#if model.isMarkdown}}
-            {{codemirror-editor value=model.body placeholder=i18n.pageBody}}
+            {{codemirror-editor value=model.body placeholder=(t 'page.body')}}
         {{else}}
-            {{tinymce-editor value=model.body onChange="bodyChanged" fillHeight=true placeholder=i18n.pageBody}}
+            {{tinymce-editor value=model.body onChange="bodyChanged" fillHeight=true placeholder=(t 'page.body')}}
         {{/if}}
     </section>
 </section>

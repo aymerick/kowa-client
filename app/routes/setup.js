@@ -5,7 +5,7 @@ var SetupRoute = AuthenticatedRoute.extend({
   model: function() {
     var self = this;
 
-    return this.session.get('currentUser').then(function(currentUser) {
+    return this.get('session.currentUser').then(function(currentUser) {
       return self.store.createRecord('site', { user: currentUser });
     });
   },

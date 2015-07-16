@@ -2,7 +2,7 @@ import AuthenticatedRoute from 'kowa/routes/authenticated';
 
 var SettingsAccountRoute = AuthenticatedRoute.extend({
   model: function() {
-    return this.session.get('currentUser');
+    return this.get('session.currentUser');
   }
 });
 

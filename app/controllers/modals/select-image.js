@@ -39,15 +39,7 @@ var SelectImageModal = Ember.ArrayController.extend(PaginationControllerMixin, {
 
       masterController.send('imageSelected', masterField, this.get('selectedImage'));
     }
-  },
-
-  i18n: function() {
-    return {
-      chooseImage: this.t('chooseImage'),
-      select: this.t('select'),
-      cancel: this.t('cancel')
-    };
-  }.property('langService.currentLang')
+  }
 });
 
 export default SelectImageModal;

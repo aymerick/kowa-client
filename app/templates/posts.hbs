@@ -1,11 +1,11 @@
 <section class="content-master">
     <header class="content-header">
         <div class="content-kind-title">{{t 'Posts'}}</div>
-        {{#link-to "posts.new" class="content-add btn btn-success btn-xs" title=i18n.newPost}}<i class="fa fa-plus"></i> {{t 'post.new'}}{{/link-to}}
+        {{#link-to "posts.new" class="content-add btn btn-success btn-xs" title=(t 'post.new')}}<i class="fa fa-plus"></i> {{t 'post.new'}}{{/link-to}}
     </header>
     {{#view "paginated-scroll-box" tagName="ol" classNames="content-body"}}
         {{#each controller itemView="list-item-view" itemTagName="li" as |item|}}
-            {{#link-to "posts.post" item title=i18n.editPost}}
+            {{#link-to "posts.post" item title=(t 'post.edit')}}
                 {{#if item.cover}}
                     <div class="item-cover">
                         <img src={{item.cover.squareUrl}} alt={{t 'coverImage'}} />

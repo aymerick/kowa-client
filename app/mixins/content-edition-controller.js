@@ -52,7 +52,7 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
     if (this.get('editionDefaultTitle') !== null) {
       // set a default title
       if (!model.get('title')) {
-          model.set('title', this.t(this.get('editionDefaultTitle')));
+          model.set('title',this.get('editionDefaultTitle'));
       }
     }
 
@@ -179,7 +179,7 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
 
     saveContent: function() {
       // save
-      this.commitEdition(this.t(this.get('editionSaveMsgOk')), this.t(this.get('editionSaveMsgErr')));
+      this.commitEdition(this.get('editionSaveMsgOk'), this.get('editionSaveMsgErr'));
     }
   }
 });

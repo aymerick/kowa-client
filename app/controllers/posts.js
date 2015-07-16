@@ -56,14 +56,7 @@ var PostsController = Ember.ArrayController.extend(PaginationControllerMixin, {
     }
 
     return statusResult;
-  },
-
-  i18n: function() {
-    return {
-      newPost: this.t('post.new'),
-      editPost: this.t('post.edit')
-    };
-  }.property('langService.currentLang')
+  }
 });
 
 export default PostsController;
