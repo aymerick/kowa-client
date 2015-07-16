@@ -16,6 +16,10 @@ var ApplicationRoute = Ember.Route.extend(SimpleAuthApplicationRouteMixin, {
   },
 
   actions: {
+    invalidateSession: function() {
+      this.get('session').invalidate();
+    },
+
     sessionAuthenticationFailed: function(/* error */) {
       this.get('controller').get('flashes').danger('Authentication failed.');
     },

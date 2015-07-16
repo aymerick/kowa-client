@@ -133,7 +133,7 @@ moduleFor('route:sites', {
 // test('Homepage displays first post of first site if authenticated', function(assert) {
 //   assert.expect(1);
 
-//   authenticateSession();
+//   sessionRequiresAuthentication();
 //   visit('/');
 
 //   andThen(function() {

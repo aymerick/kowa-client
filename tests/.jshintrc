@@ -22,7 +22,7 @@
     "currentURL",
     "currentPath",
     "currentRouteName",
-    "authenticateSession",
+    "sessionRequiresAuthentication",
     "invalidateSession"
   ],
   "node": false,
