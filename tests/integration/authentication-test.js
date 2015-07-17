@@ -1,5 +1,6 @@
 import Ember from "ember";
-import { test, moduleFor } from 'ember-qunit';
+// import { test, moduleFor } from 'ember-qunit';
+import { moduleFor } from 'ember-qunit';
 import startApp from '../helpers/start-app';
 import Pretender from 'pretender';
 
@@ -96,17 +97,17 @@ moduleFor('route:sites', {
     };
 
     server = new Pretender(function() {
-      this.get("/api/configuration", function(request) {
+      this.get("/api/configuration", function() {
         return [200, {"Content-Type": "application/json"}, JSON.stringify(configuration)];
       });
-      this.get("/api/me", function(request) {
+      this.get("/api/me", function() {
         return [200, {"Content-Type": "application/json"}, JSON.stringify(currentUserResp)];
       });
-      this.get("/api/users/test/sites", function(request) {
+      this.get("/api/users/test/sites", function() {
         return [200, {"Content-Type": "application/json"}, JSON.stringify(currentUserSitesResp)];
       });
       // ?site=site_1&page=1&perPage=15
-      this.get("/api/posts", function(request) {
+      this.get("/api/posts", function() {
         return [200, {"Content-Type": "application/json"}, JSON.stringify(site1Posts)];
       });
     });
@@ -133,7 +134,7 @@ moduleFor('route:sites', {
 // test('Homepage displays first post of first site if authenticated', function(assert) {
 //   assert.expect(1);
 
-//   sessionRequiresAuthentication();
+//   authenticateSession();
 //   visit('/');
 
 //   andThen(function() {
