@@ -36,11 +36,6 @@ var SetupController = Ember.Controller.extend({
   }.property('errorMessages'),
 
   actions: {
-    // called by 'tinymce-editor' component
-    descriptionChanged: function(newValue) {
-      this.get('model').set('description', newValue);
-    },
-
     createSite: function () {
       var self = this;
 

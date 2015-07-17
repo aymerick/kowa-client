@@ -173,10 +173,6 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
       this.get('model').set('cover', null);
     },
 
-    bodyChanged: function(newValue) {
-      this.get('model').set('body', newValue);
-    },
-
     saveContent: function() {
       // save
       this.commitEdition(this.get('editionSaveMsgOk'), this.get('editionSaveMsgErr'));

@@ -17,16 +17,6 @@ var SettingsActivitiesActivityController = Ember.Controller.extend({
       model.set(field, image);
     },
 
-    // called by 'tinymce-editor' component
-    summaryChanged: function(newValue) {
-      this.get('model').set('summary', newValue);
-    },
-
-    // called by 'tinymce-editor' component
-    bodyChanged: function(newValue) {
-      this.get('model').set('body', newValue);
-    },
-
     save: function () {
       var self = this;
 

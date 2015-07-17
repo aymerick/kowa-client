@@ -5,6 +5,7 @@ var TinyMCEEditor = Ember.Component.extend({
   classNameBindings: ['fillHeight'],
 
   value: null,
+  updatingValue: false,
   editor: null,
 
   // settings
@@ -89,8 +90,31 @@ var TinyMCEEditor = Ember.Component.extend({
 
   // callback when value changed in editor
   editorValueDidChange: function(newValue) {
-    this.sendAction('onChange', newValue);
+    var self = this;
+
+    this.updateValue(function() {
+      self.set('value', newValue);
+    });
   },
+
+  // called when updating value because of a change in editor
+  updateValue: function(callback) {
+    this.updatingValue = true;
+    callback();
+    this.updatingValue = false;
+  },
+
+  // callback when value changed outside editor
+  valueDidChange: function() {
+    if (this.updatingValue) {
+      return;
+    }
+
+    var content = this.get("value");
+    if (Ember.isPresent(content)) {
+      this.get("editor").setContent(content);
+    }
+  }.observes("value"),
 
   // callback when window size changed
   onResize: function() {
