@@ -4,7 +4,7 @@
         {{#link-to "events.new" class="content-add btn btn-success btn-xs" title=(t 'event.new')}}<i class="fa fa-plus"></i> {{t 'event.new'}}{{/link-to}}
     </header>
     {{#view "paginated-scroll-box" tagName="ol" classNames="content-body"}}
-        {{#each controller itemView="list-item-view" itemTagName="li" as |item|}}
+        {{#each controller itemView="list-item-view" as |item|}}
             {{#link-to "events.event" item title=(t 'event.edit')}}
                 {{#if item.cover}}
                     <div class="item-cover">
