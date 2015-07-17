@@ -5,6 +5,8 @@ var ATTRS = [ 'title', 'body', 'format', 'published', 'publishedAt' ];
 var BELONGS_TO = [ 'site', 'cover' ];
 
 var PostSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

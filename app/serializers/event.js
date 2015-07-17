@@ -5,6 +5,8 @@ var ATTRS = [ 'startDate', 'endDate', 'title', 'body', 'format', 'place' ];
 var BELONGS_TO = [ 'site', 'cover' ];
 
 var EventSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

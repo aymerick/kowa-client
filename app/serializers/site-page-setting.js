@@ -5,6 +5,8 @@ var ATTRS = [ 'kind', 'title', 'tagline', 'disabled' ];
 var BELONGS_TO = [ 'cover' ];
 
 var SitePageSettingsSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

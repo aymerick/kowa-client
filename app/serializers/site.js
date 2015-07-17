@@ -10,6 +10,8 @@ var ATTRS = [
 var BELONGS_TO = [ 'logo', 'cover', 'favicon', 'membership' ];
 
 var SiteSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

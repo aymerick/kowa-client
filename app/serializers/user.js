@@ -3,6 +3,8 @@ import DS from 'ember-data';
 var ATTRS = [ 'firstName', 'lastName', 'lang' ];
 
 var UserSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

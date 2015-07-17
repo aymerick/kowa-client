@@ -5,6 +5,8 @@ var ATTRS = [ 'title', 'tagline', 'body', 'format', 'inNavBar' ];
 var BELONGS_TO = [ 'site', 'cover' ];
 
 var PageSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

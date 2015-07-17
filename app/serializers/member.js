@@ -5,6 +5,8 @@ var ATTRS = [ 'fullname', 'role', 'description', 'order' ];
 var BELONGS_TO = [ 'site', 'photo' ];
 
 var MemberSerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 

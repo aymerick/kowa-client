@@ -4,6 +4,8 @@ var ATTRS = [ 'title', 'summary', 'body' ];
 var BELONGS_TO = [ 'site', 'cover' ];
 
 var ActivitySerializer = DS.RESTSerializer.extend({
+  isNewSerializerAPI: true,
+
   serialize: function(snapshot, options) {
     var result = {};
 
