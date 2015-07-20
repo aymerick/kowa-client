@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="settings-item-actions">
-                    <button {{action "openModal" "delete-activity" controller activity bubbles=false}} class="btn btn-danger action-delete">{{t 'delete'}}</button>
+                    <button {{action "openModalDelete" "delete-activity" activity bubbles=false}} class="btn btn-danger action-delete">{{t 'delete'}}</button>
                 </div>
             {{/link-to}}
         {{else}}

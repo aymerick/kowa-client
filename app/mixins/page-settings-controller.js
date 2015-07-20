@@ -15,12 +15,6 @@ var PageSettingsControllerMixin = Ember.Mixin.create({
       this.get('model').set('cover', null);
     },
 
-    // called by 'select-image' modal controller
-    imageSelected: function(field, image) {
-      var model = this.get('model');
-      model.set(field, image);
-    },
-
     save: function () {
       var self = this;
       var model = this.get('model');

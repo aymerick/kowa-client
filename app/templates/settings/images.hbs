@@ -17,7 +17,7 @@
                     <p>
                         {{t 'image.added'}} {{ago imageController.model.createdAt}}
                     </p>
-                    <button type="button" class="btn btn-sm btn-danger delete-button" {{action "openModal" "delete-image" controller imageController.model}}>{{t 'delete'}}</button>
+                    <button type="button" class="btn btn-sm btn-danger delete-button" {{action "openModalDelete" "delete-image" imageController.model}}>{{t 'delete'}}</button>
                 </div>
             {{/if}}
         {{/each}}

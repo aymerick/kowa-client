@@ -2,15 +2,13 @@ import Ember from 'ember';
 
 var DeleteFileFieldModal = Ember.Controller.extend({
   masterModel: null,
-  masterField: null,
+  modelField: null,
 
-  setupModal: function(masterController, masterField) {
-    var masterModel = masterController.get('model');
-
+  setupModalDeleteFileField: function(masterModel, modelField) {
     this.set('masterModel', masterModel);
-    this.set('masterField', masterField);
+    this.set('modelField', modelField);
 
-    this.set('model', masterModel.get(masterField).get('content'));
+    this.set('model', masterModel.get(modelField).get('content'));
   },
 
   actions: {
@@ -18,12 +16,12 @@ var DeleteFileFieldModal = Ember.Controller.extend({
       var model = this.get('model');
 
       var masterModel = this.get('masterModel');
-      var masterField = this.get('masterField');
+      var modelField = this.get('modelField');
 
       var self = this;
 
       model.destroyRecord().then(function () {
-        masterModel.set(masterField, null);
+        masterModel.set(modelField, null);
 
         masterModel.save().then(function() {
           Ember.get(self, 'flashMessages').success(self.get('i18n').t('file.deleted'));

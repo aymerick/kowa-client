@@ -11,23 +11,17 @@ var SettingsMembersMemberController = Ember.Controller.extend({
       this.get('model').set('photo', null);
     },
 
-    // called by 'select-image' modal controller
-    imageSelected: function(field, image) {
-      var model = this.get('model');
-      model.set(field, image);
-    },
-
     save: function () {
       var self = this;
 
       this.set('isSaving', true);
 
       return this.get('model').save().then(function (model) {
-        Ember.get(self, 'flashMessages').success(self.t('member.saved'));
+        Ember.get(self, 'flashMessages').success(self.get('i18n').t('member.saved'));
 
         return model;
       }).catch(function (/* errors */) {
-        Ember.get(self, 'flashMessages').danger(self.t('member.saveFailed'));
+        Ember.get(self, 'flashMessages').danger(self.get('i18n').t('member.saveFailed'));
       }).finally(function(){
         self.set('isSaving', false);
       });

@@ -32,12 +32,12 @@
     <div class="form-group">
         <label for="page-cover">{{t 'pageSettings.cover'}}</label>
         {{#if model.cover}}
-            <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "cover"}}>
+            <button type="button" class="thumbnail select-image" {{action "openModalSelectImage" site model "cover"}}>
                 <img id="page-cover" src={{model.cover.smallUrl}} alt={{t 'coverImage'}}>
                 <span class="remove-image" {{action 'removeCover'}}>&#10006;</span>
             </button>
         {{else}}
-            <button type="button" class="btn btn-success" {{action "openModal" "select-image" controller "cover"}}>{{t 'chooseImage'}}</button>
+            <button type="button" class="btn btn-success" {{action "openModalSelectImage" site model "cover"}}>{{t 'chooseImage'}}</button>
         {{/if}}
         <p class="info">
             {{t 'activity.pageCoverInfos'}}

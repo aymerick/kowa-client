@@ -10,12 +10,12 @@
     <div class="form-group">
         <label for="member-photo">{{t 'member.photo'}}</label>
         {{#if model.photo}}
-            <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "photo"}}>
+            <button type="button" class="thumbnail select-image" {{action "openModalSelectImage" site model "photo"}}>
                 <img id="member-photo" src={{model.photo.smallUrl}} alt="photo">
                 <span class="remove-image" {{action 'removePhoto'}}>&#10006;</span>
             </button>
         {{else}}
-            <button type="button" class="btn btn-success" {{action "openModal" "select-image" controller "photo"}}>{{t 'chooseImage'}}</button>
+            <button type="button" class="btn btn-success" {{action "openModalSelectImage" site model "photo"}}>{{t 'chooseImage'}}</button>
         {{/if}}
         <p class="info">
             {{t 'member.photoInfos'}}

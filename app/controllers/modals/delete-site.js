@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
 var DeleteSiteModal = Ember.Controller.extend({
-  setupModal: function(masterController, site) {
-    this.set('model', site);
-  },
-
   actions: {
     delete: function() {
       var self = this;

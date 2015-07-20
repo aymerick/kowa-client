@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
 var DeleteActivityModal = Ember.Controller.extend({
-  setupModal: function(masterController, activity) {
-    this.set('model', activity);
-  },
-
   actions: {
     delete: function() {
       var self = this;

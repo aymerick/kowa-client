@@ -28,12 +28,12 @@
     <div class="form-group">
         <label for="site-logo">{{t 'site.logo'}}</label>
         {{#if model.logo}}
-            <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "logo"}}>
+            <button type="button" class="thumbnail select-image" {{action "openModalSelectImage" site model "logo"}}>
                 <img id="site-logo" src={{model.logo.smallUrl}} alt="logo">
                 <span class="remove-image" {{action 'removeLogo'}}>&#10006;</span>
             </button>
         {{else}}
-            <button type="button" class="btn btn-success" {{action "openModal" "select-image" controller "logo"}}>{{t 'chooseImage'}}</button>
+            <button type="button" class="btn btn-success" {{action "openModalSelectImage" site model "logo"}}>{{t 'chooseImage'}}</button>
         {{/if}}
         <p class="info">
             {{t 'site.logoInfos'}}
@@ -43,12 +43,12 @@
     <div class="form-group">
         <label for="site-favicon">{{t 'site.favicon'}}</label>
         {{#if model.favicon}}
-            <button type="button" class="thumbnail select-image" {{action "openModal" "select-image" controller "favicon"}}>
+            <button type="button" class="thumbnail select-image" {{action "openModalSelectImage" site model "favicon"}}>
                 <img id="site-favicon" src={{model.favicon.smallUrl}} alt="favicon">
                 <span class="remove-image" {{action 'removeFavicon'}}>&#10006;</span>
             </button>
         {{else}}
-            <button type="button" class="btn btn-success" {{action "openModal" "select-image" controller "favicon"}}>{{t 'chooseImage'}}</button>
+            <button type="button" class="btn btn-success" {{action "openModalSelectImage" site model "favicon"}}>{{t 'chooseImage'}}</button>
         {{/if}}
         <p class="info">
             {{t 'site.faviconInfos'}}
@@ -84,7 +84,7 @@
         {{#if model.membership}}
             <div class="membership" id="site-membership">
                 <i class="fa fa-file-pdf-o"></i>
-                <a href={{model.membership.url}} target="_blank">{{model.membership.name}}</a> <button {{action "openModal" "delete-file-field" controller "membership"}} class="btn btn-danger btn-xs delete-file">{{t 'delete'}}</button>
+                <a href={{model.membership.url}} target="_blank">{{model.membership.name}}</a> <button {{action "openModalDeleteFielField" model "membership"}} class="btn btn-danger btn-xs delete-file">{{t 'delete'}}</button>
                 <div class="added">{{t 'file.added'}} {{ago model.membership.createdAt}}</div>
             </div>
         {{else}}
@@ -135,7 +135,7 @@
 <form class="settings-body" role="form">
     <div class="form-group">
         <label for="site-delete">{{t 'site.delete'}}</label>
-        <button {{action "openModal" "delete-site" controller model bubbles=false}} id="site-delete" class="btn btn-danger">{{t 'site.delete'}}</button>
+        <button {{action "openModalDelete" "delete-site" model bubbles=false}} id="site-delete" class="btn btn-danger">{{t 'site.delete'}}</button>
         <p class="info">
             {{t 'site.deleteInfos'}}
         </p>

@@ -15,6 +15,13 @@ var ApplicationRoute = Ember.Route.extend(SimpleAuthApplicationRouteMixin, {
     });
   },
 
+  renderModal: function(name) {
+    this.render(name, {
+      into: 'application',
+      outlet: 'modal'
+    });
+  },
+
   actions: {
     invalidateSession: function() {
       this.get('session').invalidate();
@@ -24,18 +31,41 @@ var ApplicationRoute = Ember.Route.extend(SimpleAuthApplicationRouteMixin, {
       this.get('controller').get('flashMessages').danger('Authentication failed.');
     },
 
-    openModal: function(name, masterController, arg) {
+    openModalDelete: function(name, model, nextRoute) {
       name = 'modals/' + name;
 
       var controller = this.controllerFor(name, true);
-      if (controller && (Ember.typeOf(controller.setupModal) === 'function')) {
-        controller.setupModal(masterController, arg);
+      if (controller) {
+        controller.set('model', model);
+
+        if (!Ember.isNone(nextRoute)) {
+          controller.set('nextRoute', nextRoute);
+        }
       }
 
-      this.render(name, {
-        into: 'application',
-        outlet: 'modal'
-      });
+      this.renderModal(name);
+    },
+
+    openModalSelectImage: function(site, model, field) {
+      var name = 'modals/select-image';
+
+      var controller = this.controllerFor(name, true);
+      if (controller) {
+        controller.setupModalSelectImage(site, model, field);
+      }
+
+      this.renderModal(name);
+    },
+
+    setupModalDeleteFileField: function(model, field) {
+      var name = 'modals/delete-file-field';
+
+      var controller = this.controllerFor(name, true);
+      if (controller) {
+        controller.setupModalDeleteFileField(model, field);
+      }
+
+      this.renderModal(name);
     },
 
     closeModal: function() {

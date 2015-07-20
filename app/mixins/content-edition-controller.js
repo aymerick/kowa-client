@@ -164,11 +164,6 @@ var ContentEditionControllerMixin = Ember.Mixin.create({
   },
 
   actions: {
-    // called by 'select-image' modal controller
-    imageSelected: function(field, image) {
-      this.set(field, image);
-    },
-
     removeCover: function() {
       this.get('model').set('cover', null);
     },

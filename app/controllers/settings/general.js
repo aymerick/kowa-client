@@ -24,12 +24,6 @@ var SettingsGeneralController = Ember.Controller.extend({
       this.get('model').set('favicon', null);
     },
 
-    // called by 'select-image' modal controller
-    imageSelected: function(field, image) {
-      var model = this.get('model');
-      model.set(field, image);
-    },
-
     save: function () {
       var self = this;
 
@@ -66,7 +60,7 @@ var SettingsGeneralController = Ember.Controller.extend({
         // update site
         self.get('site').set('membership', fileRecord);
 
-        Ember.get(self, 'flashMessages').success(self.t('file.saved'));
+        Ember.get(self, 'flashMessages').success(self.get('i18n').t('file.saved'));
       });
 
       this.uploader.schedule(job);

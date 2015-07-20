@@ -11,12 +11,10 @@ var SelectImageModal = Ember.ArrayController.extend(PaginationControllerMixin, {
 
   nothingSelected: Ember.computed.not('selectedImage'),
 
-  masterController: null,
-  masterField: null,
+  masterModel: null,
+  modelField: null,
 
-  setupModal: function(masterController, masterField) {
-    var site = masterController.get('site');
-
+  setupModalSelectImage: function(site, masterModel, modelField) {
     var params = { 'site': site.get('id'), 'page': 1, 'perPage': 16 };
     this.setupPagination('image', params);
 
@@ -24,8 +22,8 @@ var SelectImageModal = Ember.ArrayController.extend(PaginationControllerMixin, {
       return image.get('site.id') === site.get('id');
     }));
 
-    this.set('masterController', masterController);
-    this.set('masterField', masterField);
+    this.set('masterModel', masterModel);
+    this.set('modelField', modelField);
   },
 
   actions: {
@@ -34,10 +32,10 @@ var SelectImageModal = Ember.ArrayController.extend(PaginationControllerMixin, {
     },
 
     save: function() {
-      var masterController = this.get('masterController');
-      var masterField = this.get('masterField');
+      var masterModel = this.get('masterModel');
+      var modelField = this.get('modelField');
 
-      masterController.send('imageSelected', masterField, this.get('selectedImage'));
+      masterModel.set(modelField, this.get('selectedImage'));
     }
   }
 });

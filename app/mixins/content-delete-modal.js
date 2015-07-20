@@ -5,11 +5,6 @@ var ContentDeleteModalMixin = Ember.Mixin.create({
   deleteMsgOk: null,
   deleteMsgFail: null,
 
-  setupModal: function(masterController, nextRoute) {
-    this.set('model', masterController.get('model'));
-    this.set('nextRoute', nextRoute);
-  },
-
   actions: {
     delete: function() {
       var self = this;
