@@ -10,3 +10,28 @@
 
     background: #fff;
 }
+
+.beta-ribbon {
+    position: fixed;
+    top: 7px;
+    left: -20px;
+
+    z-index: 2000;
+
+    width: 80px;
+    height: 25px;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #48AAC6;
+
+    font-size: 13px;
+    font-family: sans-serif;
+
+    font-weight: bold;
+    line-height: 27px;
+
+    @include rotate(-45deg);
+    @include box-shadow(0 0 10px 0 #888);
+}
