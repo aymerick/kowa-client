@@ -10,6 +10,8 @@ module.exports = {
       port: 22,
       privateKey: process.env.KOWA_SSH_PRIVATE_KEY,
       args: ['-avz', '--no-p']
+    },
+    store: {
     }
   }
 };

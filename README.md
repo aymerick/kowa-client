@@ -57,7 +57,7 @@ Continous testing with [testem](https://github.com/airportyh/testem):
 
 Deploy in production with:
 
-    $ ember deploy -e production
+    $ ember deploy:assets -e production
 
 
 ## Sublime Text
