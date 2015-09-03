@@ -40,6 +40,7 @@ var Site = DS.Model.extend({
   files: DS.hasMany('file', { inverse: 'site', async: true }),
 
   pageSettings: DS.hasMany('site-page-setting'),
+  themeSettings: DS.hasMany('site-theme-setting'),
 
   // settings
   theme: DS.attr(),
