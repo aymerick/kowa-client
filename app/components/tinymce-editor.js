@@ -5,6 +5,7 @@ var TinyMCEEditor = Ember.Component.extend({
   classNameBindings: ['fillHeight'],
 
   value: null,
+  updatingValue: false,
   editor: null,
 
   // settings
@@ -22,11 +23,15 @@ var TinyMCEEditor = Ember.Component.extend({
 
     // bind change event
     editor.on('change', function() {
+      Ember.Logger.debug('=====================');
+      Ember.Logger.debug('[EVENT] editor.change');
       self.editorValueDidChange(editor.getContent());
     });
 
     // bind keyup event
     editor.on('keyup', function() {
+      Ember.Logger.debug('=====================');
+      Ember.Logger.debug('[EVENT] editor.keyup');
       self.editorValueDidChange(editor.getContent());
     });
   },
@@ -89,8 +94,34 @@ var TinyMCEEditor = Ember.Component.extend({
 
   // callback when value changed in editor
   editorValueDidChange: function(newValue) {
-    this.sendAction('onChange', newValue);
+    var self = this;
+
+    this.updateValue(function() {
+      Ember.Logger.debug('[VALUE RESET] ', newValue);
+      self.set('value', newValue);
+    });
   },
+
+  // called when updating value because of a change in editor
+  updateValue: function(callback) {
+    this.updatingValue = true;
+    callback();
+    this.updatingValue = false;
+  },
+
+  // callback when value changed outside editor
+  valueDidChange: function() {
+    if (this.updatingValue) {
+      Ember.Logger.debug('[VALUE CHANGED] - CANCELED');
+      return;
+    }
+
+    var content = this.get("value");
+    if (Ember.isPresent(content)) {
+      Ember.Logger.debug('[EDITOR RESET] ', content);
+      this.get("editor").setContent(content);
+    }
+  }.observes("value"),
 
   // callback when window size changed
   onResize: function() {
