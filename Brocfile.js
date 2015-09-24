@@ -19,7 +19,7 @@ var app = new EmberApp({
     }
   },
   fingerprint: {
-    exclude: ['tinymce', 'favicon.png'],
+    exclude: ['favicon.png', 'assets/ckeditor'],
   }
 });
 
@@ -72,42 +72,20 @@ app.import(app.bowerDirectory + '/ember-cli-codemirror-shim/codemirror-shim.js',
   exports: { 'codemirror': ['default'] }
 });
 
-// TinyMCE
-var tinymceDirs = importTinymce(app, pickFiles, [ 'hr', 'link', 'paste' ]);
+// CKEditor
+var ckeditorDirs = importCKEditor(app, pickFiles);
 
-function importTinymce(app, pickFiles, plugins) {
+function importCKEditor(app, pickFiles) {
   var result = [ ];
 
-  // main files
-  app.import(app.bowerDirectory + '/tinymce/tinymce.min.js');
-  app.import(app.bowerDirectory + '/tinymce/jquery.tinymce.min.js');
+  app.import(app.bowerDirectory + '/ckeditor/ckeditor.js');
 
-  // themes
-  result.push(pickFiles(app.bowerDirectory + '/tinymce/', {
-    srcDir: '/themes/modern',
-    files: ['**/*.min.js'],
-    destDir: '/tinymce/themes/modern'
+  result.push(pickFiles(app.bowerDirectory + '/ckeditor', {
+    srcDir: '/',
+    destDir: '/assets/ckeditor'
   }));
-
-  // skins
-  result.push(pickFiles(app.bowerDirectory + '/tinymce/', {
-    srcDir: '/skins/lightgray',
-    files: [ '**/*.min.css', '**/*.gif', '**/*.woff', '**/*.ttf'],
-    destDir: '/tinymce/skins/lightgray'
-  }));
-
-  // plugins
-  for (var i = 0; i < plugins.length; i++) {
-    var pluginName = plugins[i];
-
-    result.push(pickFiles(app.bowerDirectory + '/tinymce/', {
-      srcDir: '/plugins/' + pluginName,
-      files: ['plugin.min.js'],
-      destDir: '/tinymce/plugins/' + pluginName
-    }));
-  }
 
   return result;
 }
 
-module.exports = app.toTree(tinymceDirs);
+module.exports = app.toTree(ckeditorDirs);

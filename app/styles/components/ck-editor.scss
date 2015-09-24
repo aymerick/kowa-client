@@ -1,0 +1,11 @@
+.ck-editor {
+    &.fill-height {
+        .cke_inner {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+    }
+}

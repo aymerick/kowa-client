@@ -22,7 +22,7 @@
 
     <div class="form-group">
         <label for="site-description">{{t 'homepage.description'}}</label>
-        {{tinymce-editor id="site-description" value=model.description onChange="descriptionChanged" height=300}}
+        {{ck-editor value=model.description value-id=model.id on-change="descriptionChanged"}}
         <p class="info">
             {{t 'homepage.descriptionInfos'}}
         </p>
@@ -30,7 +30,7 @@
 
     <div class="form-group">
         <label for="site-more-desc">{{t 'homepage.additionalDescription'}}</label>
-        {{tinymce-editor id="site-more-desc" value=model.moreDesc onChange="moreDescChanged" height=300}}
+        {{ck-editor value=model.moreDesc value-id=model.id on-change="moreDescChanged"}}
         <p class="info">
             {{t 'homepage.additionalDescriptionInfos'}}
         </p>
@@ -38,7 +38,7 @@
 
     <div class="form-group">
         <label for="site-join-text">{{t 'homepage.joinText'}}</label>
-        {{tinymce-editor id="site-join-text" value=model.joinText onChange="joinTextChanged" height=300}}
+        {{ck-editor value=model.joinText value-id=model.id on-change="joinTextChanged"}}
         <p class="info">
             {{t 'homepage.joinTextInfos'}}
         </p>

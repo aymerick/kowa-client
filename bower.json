@@ -24,6 +24,6 @@
     "moment": "~2.10.3",
     "eonasdan-bootstrap-datetimepicker": "~4.14.30",
     "twix": "~0.6.4",
-    "tinymce": "~4.1.10"
+    "ckeditor": "~4.5.3"
   }
 }

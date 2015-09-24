@@ -32,7 +32,7 @@
 
     <div class="form-group">
         <label for="activity-summary">{{t 'activity.summary'}}</label>
-        {{tinymce-editor id="activity-summary" value=model.summary onChange="summaryChanged" height=150}}
+        {{ck-editor value=model.summary value-id=model.id on-change="summaryChanged"}}
         <p class="info">
             {{t 'activity.summaryInfos'}}
         </p>
@@ -40,7 +40,7 @@
 
     <div class="form-group">
         <label for="activity-body">{{t 'activity.description'}}</label>
-        {{tinymce-editor id="activity-body" value=model.body onChange="bodyChanged" height=300}}
+        {{ck-editor value=model.body value-id=model.id on-change="bodyChanged"}}
         <p class="info">
             {{t 'activity.descriptionInfos'}}
         </p>

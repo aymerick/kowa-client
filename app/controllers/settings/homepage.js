@@ -16,17 +16,17 @@ var SettingsHomepageController = Ember.Controller.extend({
       model.set(field, image);
     },
 
-    // called by 'tinymce-editor' component
+    // called by 'ck-editor' component
     descriptionChanged: function(newValue) {
       this.get('model').set('description', newValue);
     },
 
-    // called by 'tinymce-editor' component
+    // called by 'ck-editor' component
     moreDescChanged: function(newValue) {
       this.get('model').set('moreDesc', newValue);
     },
 
-    // called by 'tinymce-editor' component
+    // called by 'ck-editor' component
     joinTextChanged: function(newValue) {
       this.get('model').set('joinText', newValue);
     },

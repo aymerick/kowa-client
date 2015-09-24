@@ -56,7 +56,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" for="site-description">{{t 'homepage.description'}}</label>
-            {{tinymce-editor id="site-description" value=model.description onChange="descriptionChanged" height=300}}
+            {{ck-editor value=model.description value-id=model.id on-change="descriptionChanged"}}
             <p class="info">
                 {{t 'homepage.descriptionInfos'}}
             </p>
