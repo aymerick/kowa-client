@@ -54,7 +54,7 @@ export default Ember.Component.extend({
     let textarea = this.element.querySelector('.editor');
     this.editor = CKEDITOR.replace(textarea, settings);
 
-    this.editor.on('instanceReady', (e) => {
+    this.editor.on('instanceReady', () => {
       if (this.get('fillHeight')) {
         this.resizeHandler();
       }
