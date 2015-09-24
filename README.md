@@ -55,7 +55,11 @@ Continous testing with [testem](https://github.com/airportyh/testem):
 
 ## Production
 
-Deploy in production with:
+To deploy in production, first set the `KOWA_SSH_PRIVATE_KEY` and `KOWA_SSH_PRIVATE_KEY` env variables, then:
+
+    $ ember build -e production
+
+Or maybe:
 
     $ ember deploy:assets -e production
 
