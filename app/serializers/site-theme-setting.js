@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-var ATTRS = [ 'sass' ];
+var ATTRS = [ 'palette', 'sass' ];
 
 var SitePageSettingsSerializer = DS.RESTSerializer.extend({
   serialize: function(snapshot, options) {
