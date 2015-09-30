@@ -57,7 +57,7 @@
 
     <div class="form-group">
         <label for="site-theme">{{t 'site.theme'}}</label>
-        {{view "select" id="site-theme" content=kowa.conf.themes selection=model.theme class="form-control"}}
+        {{view "select" id="site-theme" content=kowa.conf.themes optionValuePath="content.id" optionLabelPath="content.name" value=model.theme class="form-control"}}
         <p class="info">
             {{t 'site.themeInfos'}}
         </p>
