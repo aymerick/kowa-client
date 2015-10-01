@@ -258,7 +258,9 @@ export default {
     tagline: 'Accroche',
     taglineInfos: 'Une phrase qui résume bien votre site',
     theme: 'Habillage',
-    themeInfos: 'Choisissez un habillage graphique pour votre site'
+    themeInfos: 'Choisissez un habillage graphique pour votre site',
+    themePalette: "Couleurs de l'habillage",
+    themePaletteInfos: "Cet habillage possède plusieurs variantes"
   },
 
   // account settings

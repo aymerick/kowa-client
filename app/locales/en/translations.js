@@ -243,7 +243,9 @@ export default {
     tagline: 'Site Tagline',
     taglineInfos: 'The tagline of your site',
     theme: 'Site theme',
-    themeInfos: 'The theme to use for your site'
+    themeInfos: 'The theme to use for your site',
+    themePalette: 'Theme colors',
+    themePaletteInfos: 'That theme has several variants'
   },
 
   // homepage settings

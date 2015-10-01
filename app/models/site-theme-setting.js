@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  theme: DS.attr('string'),
   palette: DS.attr('string', { defaultValue: "" }),
   custom: DS.attr('string', { defaultValue: "" }),
 

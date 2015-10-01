@@ -63,6 +63,16 @@
         </p>
     </div>
 
+    {{#if themeConfPalettes}}
+      <div class="form-group">
+          <label for="theme-palette">{{t 'site.themePalette'}}</label>
+          {{view "select" id="theme-palette" content=themeConfPalettes optionValuePath="content.name" optionLabelPath="content.name" value=themeSettings.palette class="form-control"}}
+          <p class="info">
+              {{t 'site.themePaletteInfos'}}
+            </p>
+          </div>
+    {{/if}}
+
     <div class="form-group">
         <label for="site-google-analytics">{{t 'site.googleAnalytics'}}</label>
         {{input id="site-google-analytics" name="general[google-analytics]" type="text" class="form-control" value=model.googleAnalytics}}

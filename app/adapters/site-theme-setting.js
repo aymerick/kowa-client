@@ -1,8 +1,8 @@
 import DS from 'ember-data';
 
-var SitePageSettingAdapter = DS.RESTAdapter.extend({
+var SiteThemeSettingAdapter = DS.RESTAdapter.extend({
   pathForType: function() {
-    return 'page-settings';
+    return 'theme-settings';
   },
 
   buildURL: function(type, id, snapshot) {
@@ -13,4 +13,4 @@ var SitePageSettingAdapter = DS.RESTAdapter.extend({
   }
 });
 
-export default SitePageSettingAdapter;
+export default SiteThemeSettingAdapter;
